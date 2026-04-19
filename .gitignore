@@ -1,0 +1,34 @@
+ОС и редакторы
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*.orig
+.idea/
+.vscode/
+*.code-workspace
+Логи и кеши
+*.log
+logs/
+.cache/
+coverage/
+.parcel-cache/
+.eslintcache
+.stylelintcache
+Node / фронтенд
+node_modules/
+dist/
+build/
+.next/
+.nuxt/
+out/
+Python
+venv/
+.venv/
+pycache/
+*.py[cod]
+*.egg-info/
+Секреты/переменные окружения
+.env
+.env.*
+!.env.example
