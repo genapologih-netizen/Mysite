@@ -1,9 +1,0 @@
-User-agent: *
-Allow: /
-Sitemap: https://avtopoliv-ufa.ru/sitemap.xml
-
-User-agent: Yandex
-Allow: /
-
-User-agent: Googlebot
-Allow: /
