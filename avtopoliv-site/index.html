@@ -232,346 +232,317 @@
         <svg viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice" fill="none" xmlns="http://www.w3.org/2000/svg">
             <defs>
                 <linearGradient id="hsky" x1="0" y1="0" x2="0" y2="1">
-                    <stop offset="0%" stop-color="#4FC3F7"/>
-                    <stop offset="50%" stop-color="#81D4FA"/>
-                    <stop offset="100%" stop-color="#B3E5FC"/>
+                    <stop offset="0%" stop-color="#29B6F6"/>
+                    <stop offset="55%" stop-color="#81D4FA"/>
+                    <stop offset="100%" stop-color="#E1F5FE"/>
                 </linearGradient>
                 <linearGradient id="hlawn" x1="0" y1="0" x2="0" y2="1">
-                    <stop offset="0%" stop-color="#66BB6A"/>
+                    <stop offset="0%" stop-color="#81C784"/>
+                    <stop offset="100%" stop-color="#2E7D32"/>
+                </linearGradient>
+                <linearGradient id="hlawn2" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0%" stop-color="#A5D6A7"/>
                     <stop offset="100%" stop-color="#388E3C"/>
                 </linearGradient>
-                <linearGradient id="hearth" x1="0" y1="0" x2="0" y2="1">
-                    <stop offset="0%" stop-color="#8D6E63"/>
-                    <stop offset="30%" stop-color="#6D4C41"/>
-                    <stop offset="100%" stop-color="#4E342E"/>
-                </linearGradient>
-                <linearGradient id="hroof" x1="0" y1="0" x2="0" y2="1">
-                    <stop offset="0%" stop-color="#5D4037"/>
-                    <stop offset="100%" stop-color="#4E342E"/>
-                </linearGradient>
-                <linearGradient id="hwall" x1="0" y1="0" x2="1" y2="0">
-                    <stop offset="0%" stop-color="#BCAAA4"/>
-                    <stop offset="100%" stop-color="#A1887F"/>
+                <linearGradient id="hhills" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0%" stop-color="#388E3C"/>
+                    <stop offset="100%" stop-color="#1B5E20"/>
                 </linearGradient>
                 <linearGradient id="hwaterArc" x1="0" y1="0" x2="0" y2="1">
-                    <stop offset="0%" stop-color="#E1F5FE" stop-opacity="0.9"/>
-                    <stop offset="100%" stop-color="#4FC3F7" stop-opacity="0.3"/>
+                    <stop offset="0%" stop-color="#E1F5FE" stop-opacity="0.95"/>
+                    <stop offset="100%" stop-color="#4FC3F7" stop-opacity="0.2"/>
                 </linearGradient>
-                <linearGradient id="hpipe" x1="0" y1="0" x2="1" y2="0">
-                    <stop offset="0%" stop-color="#42A5F5"/>
-                    <stop offset="100%" stop-color="#1E88E5"/>
+                <linearGradient id="hhouse" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0%" stop-color="#ECEFF1"/>
+                    <stop offset="100%" stop-color="#CFD8DC"/>
                 </linearGradient>
-                <radialGradient id="hsun" cx="50%" cy="50%" r="50%">
-                    <stop offset="0%" stop-color="#FFF9C4"/>
-                    <stop offset="60%" stop-color="#FFF176" stop-opacity="0.4"/>
-                    <stop offset="100%" stop-color="#FFF176" stop-opacity="0"/>
-                </radialGradient>
-                <filter id="hglow" x="-20%" y="-20%" width="140%" height="140%">
+                <linearGradient id="hroof" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0%" stop-color="#546E7A"/>
+                    <stop offset="100%" stop-color="#263238"/>
+                </linearGradient>
+                <filter id="hglow">
                     <feGaussianBlur stdDeviation="3" result="blur"/>
                     <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
                 </filter>
             </defs>
 
+            <!-- SKY -->
             <rect width="1440" height="900" fill="url(#hsky)"/>
 
-            <circle cx="1250" cy="120" r="120" fill="url(#hsun)"/>
-            <circle cx="1250" cy="120" r="40" fill="#FFF9C4" opacity="0.7"/>
-            <g opacity="0.15">
-                <circle cx="400" cy="80" r="50" fill="#fff"/>
-                <circle cx="430" cy="70" r="40" fill="#fff"/>
-                <circle cx="360" cy="75" r="35" fill="#fff"/>
+            <!-- SUN -->
+            <circle cx="1200" cy="95" r="200" fill="#FFF9C4" opacity="0.1" class="hero-sun-outer"/>
+            <circle cx="1200" cy="95" r="100" fill="#FFF176" opacity="0.3"/>
+            <circle cx="1200" cy="95" r="60" fill="#FFEE58" opacity="0.75"/>
+            <circle cx="1200" cy="95" r="40" fill="#FFF9C4"/>
+
+            <!-- CLOUDS -->
+            <g class="hero-cloud-1" opacity="0.9">
+                <ellipse cx="280" cy="95" rx="95" ry="42" fill="#fff"/>
+                <ellipse cx="238" cy="107" rx="68" ry="36" fill="#fff"/>
+                <ellipse cx="322" cy="105" rx="74" ry="33" fill="#fff"/>
+                <ellipse cx="280" cy="118" rx="100" ry="28" fill="#fff"/>
             </g>
-            <g opacity="0.12">
-                <circle cx="900" cy="60" r="45" fill="#fff"/>
-                <circle cx="930" cy="50" r="38" fill="#fff"/>
-                <circle cx="870" cy="55" r="32" fill="#fff"/>
+            <g class="hero-cloud-2" opacity="0.75">
+                <ellipse cx="750" cy="68" rx="75" ry="33" fill="#fff"/>
+                <ellipse cx="718" cy="79" rx="54" ry="28" fill="#fff"/>
+                <ellipse cx="782" cy="77" rx="58" ry="26" fill="#fff"/>
+                <ellipse cx="750" cy="88" rx="80" ry="23" fill="#fff"/>
+            </g>
+            <g class="hero-cloud-3" opacity="0.5">
+                <ellipse cx="1030" cy="125" rx="58" ry="26" fill="#fff"/>
+                <ellipse cx="1003" cy="134" rx="42" ry="22" fill="#fff"/>
+                <ellipse cx="1058" cy="133" rx="44" ry="20" fill="#fff"/>
+                <ellipse cx="1030" cy="143" rx="62" ry="18" fill="#fff"/>
             </g>
 
-            <path d="M0 380 Q200 340 400 360 Q600 380 800 350 Q1000 320 1200 350 Q1350 370 1440 360 V420 H0Z" fill="#81C784" opacity="0.3"/>
-
-            <path d="M0 580 Q200 560 400 570 Q600 580 800 565 Q1000 550 1200 565 Q1350 575 1440 570 V900 H0Z" fill="url(#hlawn)"/>
-
-            <path d="M0 590 Q300 580 600 585 Q900 590 1200 580 Q1350 575 1440 578 V900 H0Z" fill="#43A047" opacity="0.5"/>
-
-            <g>
-                <rect x="80" y="400" width="240" height="155" rx="4" fill="url(#hwall)"/>
-                <polygon points="60,400 200,310 340,400" fill="url(#hroof)"/>
-                <line x1="60" y1="400" x2="340" y2="400" stroke="#795548" stroke-width="4"/>
-                <rect x="195" y="340" width="22" height="60" rx="1" fill="#4E342E"/>
-                <rect x="192" y="337" width="28" height="4" rx="1" fill="#5D4037"/>
-                <rect x="160" y="415" width="30" height="30" rx="2" fill="#B3E5FC" opacity="0.5" stroke="#795548" stroke-width="1.5"/>
-                <line x1="175" y1="415" x2="175" y2="445" stroke="#795548" stroke-width="1" opacity="0.5"/>
-                <line x1="160" y1="430" x2="190" y2="430" stroke="#795548" stroke-width="1" opacity="0.5"/>
-                <rect x="210" y="415" width="30" height="30" rx="2" fill="#B3E5FC" opacity="0.5" stroke="#795548" stroke-width="1.5"/>
-                <line x1="225" y1="415" x2="225" y2="445" stroke="#795548" stroke-width="1" opacity="0.5"/>
-                <line x1="210" y1="430" x2="240" y2="430" stroke="#795548" stroke-width="1" opacity="0.5"/>
-                <rect x="160" y="465" width="30" height="30" rx="2" fill="#B3E5FC" opacity="0.45" stroke="#795548" stroke-width="1.5"/>
-                <line x1="175" y1="465" x2="175" y2="495" stroke="#795548" stroke-width="1" opacity="0.5"/>
-                <line x1="160" y1="480" x2="190" y2="480" stroke="#795548" stroke-width="1" opacity="0.5"/>
-                <rect x="210" y="465" width="30" height="30" rx="2" fill="#B3E5FC" opacity="0.45" stroke="#795548" stroke-width="1.5"/>
-                <line x1="225" y1="465" x2="225" y2="495" stroke="#795548" stroke-width="1" opacity="0.5"/>
-                <line x1="210" y1="480" x2="240" y2="480" stroke="#795548" stroke-width="1" opacity="0.5"/>
-                <rect x="100" y="460" width="36" height="80" rx="3" fill="#4E342E"/>
-                <rect x="104" y="464" width="28" height="40" rx="2" fill="#FFCC80" opacity="0.35"/>
-                <circle cx="128" cy="500" r="3" fill="#6D4C41"/>
-                <rect x="340" y="470" width="40" height="60" rx="2" fill="#E8F5E9" opacity="0.5" stroke="#66BB6A" stroke-width="1"/>
-                <rect x="344" y="474" width="32" height="20" rx="1" fill="#A5D6A7" opacity="0.4"/>
-                <circle cx="360" cy="508" r="6" fill="#66BB6A" opacity="0.3"/>
+            <!-- BIRDS -->
+            <g opacity="0.45" fill="none" stroke="#546E7A" stroke-width="1.5" stroke-linecap="round">
+                <path d="M580 165 Q586 158 592 165"/>
+                <path d="M598 160 Q604 153 610 160"/>
+                <path d="M567 170 Q572 164 577 170"/>
             </g>
 
-            <g opacity="0.4" stroke="#388E3C" stroke-width="1" stroke-dasharray="8 6" fill="none">
-                <ellipse cx="500" cy="600" rx="100" ry="40"/>
-                <ellipse cx="750" cy="595" rx="90" ry="35"/>
-                <ellipse cx="1000" cy="600" rx="110" ry="40"/>
-                <ellipse cx="1250" cy="590" rx="80" ry="30"/>
-            </g>
+            <!-- BACKGROUND HILLS -->
+            <path d="M0 415 Q150 385 320 398 Q480 410 640 388 Q800 366 960 390 Q1100 408 1250 385 Q1370 368 1440 375 V900 H0Z" fill="url(#hhills)" opacity="0.9"/>
+            <path d="M0 440 Q200 420 400 432 Q650 445 900 422 Q1150 400 1440 420 V900 H0Z" fill="#1B5E20" opacity="0.55"/>
 
-            <g>
-                <line x1="500" y1="585" x2="500" y2="545" stroke="#78909C" stroke-width="5" stroke-linecap="round"/>
-                <circle cx="500" cy="543" r="5" fill="#90A4AE"/>
-                <path d="M500 543 Q440 460 380 500" stroke="url(#hwaterArc)" stroke-width="5" fill="none" filter="url(#hglow)"/>
-                <path d="M500 543 Q560 460 620 500" stroke="url(#hwaterArc)" stroke-width="5" fill="none" filter="url(#hglow)"/>
-                <path d="M500 543 Q420 430 340 475" stroke="url(#hwaterArc)" stroke-width="3.5" fill="none" opacity="0.6" filter="url(#hglow)"/>
-                <path d="M500 543 Q580 430 660 475" stroke="url(#hwaterArc)" stroke-width="3.5" fill="none" opacity="0.6" filter="url(#hglow)"/>
-                <path d="M500 543 Q400 400 300 450" stroke="url(#hwaterArc)" stroke-width="2.5" fill="none" opacity="0.4"/>
-                <path d="M500 543 Q600 400 700 450" stroke="url(#hwaterArc)" stroke-width="2.5" fill="none" opacity="0.4"/>
-            </g>
+            <!-- DISTANT TREES -->
+            <ellipse cx="100" cy="392" rx="52" ry="68" fill="#2E7D32" opacity="0.75"/>
+            <rect x="93" y="428" width="14" height="75" rx="3" fill="#3E2723" opacity="0.6"/>
+            <ellipse cx="188" cy="403" rx="38" ry="52" fill="#388E3C" opacity="0.7"/>
+            <rect x="182" y="434" width="12" height="65" rx="3" fill="#3E2723" opacity="0.55"/>
+            <ellipse cx="1370" cy="390" rx="48" ry="63" fill="#2E7D32" opacity="0.65"/>
+            <rect x="1363" y="422" width="14" height="70" rx="3" fill="#3E2723" opacity="0.55"/>
 
-            <g>
-                <line x1="750" y1="580" x2="750" y2="540" stroke="#78909C" stroke-width="5" stroke-linecap="round"/>
-                <circle cx="750" cy="538" r="5" fill="#90A4AE"/>
-                <path d="M750 538 Q700 470 650 500" stroke="url(#hwaterArc)" stroke-width="4.5" fill="none" filter="url(#hglow)"/>
-                <path d="M750 538 Q800 470 850 500" stroke="url(#hwaterArc)" stroke-width="4.5" fill="none" filter="url(#hglow)"/>
-                <path d="M750 538 Q680 440 610 480" stroke="url(#hwaterArc)" stroke-width="3" fill="none" opacity="0.5" filter="url(#hglow)"/>
-                <path d="M750 538 Q820 440 890 480" stroke="url(#hwaterArc)" stroke-width="3" fill="none" opacity="0.5" filter="url(#hglow)"/>
-            </g>
+            <!-- LAWN -->
+            <path d="M0 486 Q360 464 720 476 Q1080 488 1440 468 V900 H0Z" fill="url(#hlawn)"/>
+            <path d="M0 508 Q360 488 720 498 Q1080 512 1440 492 V900 H0Z" fill="url(#hlawn2)" opacity="0.4"/>
 
-            <g>
-                <line x1="1000" y1="585" x2="1000" y2="548" stroke="#78909C" stroke-width="5" stroke-linecap="round"/>
-                <circle cx="1000" cy="546" r="5" fill="#90A4AE"/>
-                <path d="M1000 546 Q940 470 880 505" stroke="url(#hwaterArc)" stroke-width="4.5" fill="none" filter="url(#hglow)"/>
-                <path d="M1000 546 Q1060 470 1120 505" stroke="url(#hwaterArc)" stroke-width="4.5" fill="none" filter="url(#hglow)"/>
-                <path d="M1000 546 Q920 440 840 480" stroke="url(#hwaterArc)" stroke-width="3" fill="none" opacity="0.5" filter="url(#hglow)"/>
-                <path d="M1000 546 Q1080 440 1160 480" stroke="url(#hwaterArc)" stroke-width="3" fill="none" opacity="0.5" filter="url(#hglow)"/>
-            </g>
+            <!-- HOUSE (right side) -->
+            <rect x="948" y="590" width="312" height="14" rx="2" fill="#90A4AE" opacity="0.5"/>
+            <rect x="952" y="420" width="285" height="175" rx="3" fill="url(#hhouse)"/>
+            <polygon points="928,422 1094,295 1260,422" fill="url(#hroof)"/>
+            <line x1="928" y1="422" x2="1260" y2="422" stroke="#37474F" stroke-width="3.5"/>
+            <rect x="1148" y="308" width="26" height="62" rx="2" fill="#546E7A"/>
+            <rect x="1143" y="305" width="36" height="7" rx="2" fill="#455A64"/>
+            <rect x="976" y="440" width="72" height="57" rx="4" fill="#B3E5FC" opacity="0.65" stroke="#90A4AE" stroke-width="1.5"/>
+            <line x1="1012" y1="440" x2="1012" y2="497" stroke="#90A4AE" stroke-width="1.5"/>
+            <line x1="976" y1="468" x2="1048" y2="468" stroke="#90A4AE" stroke-width="1.5"/>
+            <rect x="1065" y="440" width="72" height="57" rx="4" fill="#B3E5FC" opacity="0.65" stroke="#90A4AE" stroke-width="1.5"/>
+            <line x1="1101" y1="440" x2="1101" y2="497" stroke="#90A4AE" stroke-width="1.5"/>
+            <line x1="1065" y1="468" x2="1137" y2="468" stroke="#90A4AE" stroke-width="1.5"/>
+            <rect x="1068" y="348" width="52" height="42" rx="3" fill="#B3E5FC" opacity="0.45" stroke="#90A4AE" stroke-width="1"/>
+            <line x1="1094" y1="348" x2="1094" y2="390" stroke="#90A4AE" stroke-width="1" opacity="0.5"/>
+            <rect x="1166" y="470" width="44" height="72" rx="4" fill="#5D4037"/>
+            <circle cx="1174" cy="508" r="4.5" fill="#FFB300"/>
+            <rect x="940" y="578" width="315" height="14" rx="2" fill="#B0BEC5" opacity="0.4"/>
+            <rect x="953" y="498" width="10" height="80" rx="2" fill="#ECEFF1" opacity="0.6"/>
+            <rect x="1222" y="498" width="10" height="80" rx="2" fill="#ECEFF1" opacity="0.6"/>
 
-            <g>
-                <line x1="1250" y1="575" x2="1250" y2="545" stroke="#78909C" stroke-width="4" stroke-linecap="round"/>
-                <circle cx="1250" cy="543" r="4" fill="#90A4AE"/>
-                <path d="M1250 543 Q1205 490 1160 515" stroke="url(#hwaterArc)" stroke-width="3.5" fill="none" filter="url(#hglow)"/>
-                <path d="M1250 543 Q1295 490 1340 515" stroke="url(#hwaterArc)" stroke-width="3.5" fill="none" filter="url(#hglow)"/>
-            </g>
+            <!-- FOREGROUND TREES -->
+            <rect x="163" y="488" width="22" height="130" rx="4" fill="#5D4037"/>
+            <ellipse cx="174" cy="455" rx="75" ry="85" fill="#43A047"/>
+            <ellipse cx="150" cy="443" rx="55" ry="65" fill="#66BB6A"/>
+            <ellipse cx="196" cy="440" rx="50" ry="60" fill="#4CAF50"/>
+            <ellipse cx="174" cy="425" rx="60" ry="55" fill="#81C784"/>
+            <rect x="402" y="504" width="16" height="98" rx="3" fill="#6D4C41"/>
+            <ellipse cx="410" cy="474" rx="54" ry="65" fill="#388E3C"/>
+            <ellipse cx="390" cy="462" rx="40" ry="52" fill="#4CAF50"/>
+            <ellipse cx="428" cy="460" rx="38" ry="48" fill="#66BB6A"/>
+            <ellipse cx="410" cy="442" rx="44" ry="42" fill="#81C784"/>
 
-            <g transform="translate(380,555)" opacity="0.7">
-                <ellipse cx="0" cy="0" rx="14" ry="7" fill="#E91E63"/>
-                <ellipse cx="-7" cy="-5" rx="6" ry="10" fill="#F06292" transform="rotate(-15,-7,-5)"/>
-                <ellipse cx="7" cy="-5" rx="6" ry="10" fill="#F06292" transform="rotate(15,7,-5)"/>
-                <circle cx="0" cy="-3" r="3.5" fill="#FFEB3B"/>
-            </g>
-            <g transform="translate(620,550)" opacity="0.65">
-                <ellipse cx="0" cy="0" rx="12" ry="6" fill="#FF7043"/>
-                <ellipse cx="-6" cy="-4" rx="5" ry="8" fill="#FF8A65" transform="rotate(-12,-6,-4)"/>
-                <ellipse cx="6" cy="-4" rx="5" ry="8" fill="#FF8A65" transform="rotate(12,6,-4)"/>
-                <circle cx="0" cy="-2" r="3" fill="#FFF176"/>
-            </g>
-            <g transform="translate(880,548)" opacity="0.65">
-                <ellipse cx="0" cy="0" rx="13" ry="6" fill="#AB47BC"/>
-                <ellipse cx="-6" cy="-4" rx="5" ry="9" fill="#CE93D8" transform="rotate(-18,-6,-4)"/>
-                <ellipse cx="6" cy="-4" rx="5" ry="9" fill="#CE93D8" transform="rotate(18,6,-4)"/>
-                <circle cx="0" cy="-2" r="3" fill="#FDD835"/>
-            </g>
-            <g transform="translate(1120,555)" opacity="0.6">
-                <ellipse cx="0" cy="0" rx="11" ry="5" fill="#FF5252"/>
-                <ellipse cx="-5" cy="-3" rx="4" ry="7" fill="#FF8A80" transform="rotate(-12,-5,-3)"/>
-                <ellipse cx="5" cy="-3" rx="4" ry="7" fill="#FF8A80" transform="rotate(12,5,-3)"/>
-                <circle cx="0" cy="-1" r="2.5" fill="#FFF9C4"/>
-            </g>
-            <g transform="translate(1340,548)" opacity="0.55">
-                <ellipse cx="0" cy="0" rx="10" ry="5" fill="#7B1FA2"/>
-                <ellipse cx="-5" cy="-3" rx="4" ry="7" fill="#9C27B0" transform="rotate(-15,-5,-3)"/>
-                <ellipse cx="5" cy="-3" rx="4" ry="7" fill="#9C27B0" transform="rotate(15,5,-3)"/>
-                <circle cx="0" cy="-1" r="2.5" fill="#FDD835"/>
-            </g>
+            <!-- BUSHES near house -->
+            <ellipse cx="935" cy="548" rx="38" ry="24" fill="#2E7D32" opacity="0.85"/>
+            <ellipse cx="972" cy="542" rx="28" ry="20" fill="#388E3C"/>
+            <ellipse cx="908" cy="546" rx="26" ry="18" fill="#43A047" opacity="0.8"/>
+            <ellipse cx="1248" cy="546" rx="32" ry="20" fill="#2E7D32" opacity="0.8"/>
+            <ellipse cx="1276" cy="543" rx="24" ry="17" fill="#388E3C" opacity="0.85"/>
 
-            <g transform="translate(430,572)" opacity="0.5">
-                <line x1="0" y1="0" x2="0" y2="10" stroke="#2E7D32" stroke-width="1.5"/>
-                <ellipse cx="-4" cy="0" rx="3" ry="5" fill="#4CAF50" transform="rotate(-20,-4,0)"/>
-                <ellipse cx="4" cy="0" rx="3" ry="5" fill="#4CAF50" transform="rotate(20,4,0)"/>
-            </g>
-            <g transform="translate(570,565)" opacity="0.5">
-                <line x1="0" y1="0" x2="0" y2="10" stroke="#2E7D32" stroke-width="1.5"/>
-                <ellipse cx="-4" cy="0" rx="3" ry="5" fill="#66BB6A" transform="rotate(-20,-4,0)"/>
-                <ellipse cx="4" cy="0" rx="3" ry="5" fill="#66BB6A" transform="rotate(20,4,0)"/>
-            </g>
-            <g transform="translate(680,568)" opacity="0.45">
-                <line x1="0" y1="0" x2="0" y2="8" stroke="#2E7D32" stroke-width="1"/>
-                <ellipse cx="-3" cy="0" rx="2" ry="4" fill="#4CAF50" transform="rotate(-15,-3,0)"/>
-                <ellipse cx="3" cy="0" rx="2" ry="4" fill="#4CAF50" transform="rotate(15,3,0)"/>
-            </g>
-            <g transform="translate(830,562)" opacity="0.5">
-                <line x1="0" y1="0" x2="0" y2="10" stroke="#2E7D32" stroke-width="1.5"/>
-                <ellipse cx="-4" cy="0" rx="3" ry="5" fill="#43A047" transform="rotate(-20,-4,0)"/>
-                <ellipse cx="4" cy="0" rx="3" ry="5" fill="#43A047" transform="rotate(20,4,0)"/>
-            </g>
+            <!-- FLOWER BED LEFT (roses / tulips) -->
+            <ellipse cx="295" cy="572" rx="125" ry="18" fill="#4E342E" opacity="0.25"/>
+            <line x1="225" y1="572" x2="225" y2="535" stroke="#2E7D32" stroke-width="2.5"/>
+            <ellipse cx="225" cy="529" rx="13" ry="18" fill="#EF5350"/>
+            <ellipse cx="218" cy="524" rx="9" ry="13" fill="#E53935"/>
+            <ellipse cx="232" cy="526" rx="9" ry="13" fill="#EF9A9A"/>
+            <circle cx="225" cy="519" r="6" fill="#FFCDD2" opacity="0.9"/>
+            <line x1="255" y1="573" x2="255" y2="534" stroke="#388E3C" stroke-width="2.5"/>
+            <ellipse cx="255" cy="527" rx="10" ry="15" fill="#F06292"/>
+            <ellipse cx="248" cy="522" rx="7" ry="11" fill="#EC407A"/>
+            <ellipse cx="262" cy="523" rx="7" ry="11" fill="#F48FB1"/>
+            <circle cx="255" cy="517" r="5" fill="#fff" opacity="0.7"/>
+            <line x1="285" y1="570" x2="285" y2="533" stroke="#388E3C" stroke-width="2.5"/>
+            <ellipse cx="285" cy="527" rx="9" ry="17" fill="#FF7043"/>
+            <ellipse cx="278" cy="522" rx="7" ry="12" fill="#FF5722"/>
+            <ellipse cx="292" cy="523" rx="7" ry="12" fill="#FF8A65"/>
+            <circle cx="285" cy="516" r="5" fill="#FFCCBC" opacity="0.9"/>
+            <line x1="315" y1="571" x2="315" y2="537" stroke="#2E7D32" stroke-width="2"/>
+            <ellipse cx="315" cy="530" rx="9" ry="13" fill="#AB47BC"/>
+            <ellipse cx="308" cy="526" rx="6" ry="10" fill="#9C27B0"/>
+            <ellipse cx="322" cy="527" rx="6" ry="10" fill="#CE93D8"/>
+            <circle cx="315" cy="522" r="4.5" fill="#FDD835"/>
+            <line x1="345" y1="570" x2="345" y2="537" stroke="#388E3C" stroke-width="2"/>
+            <ellipse cx="345" cy="530" rx="9" ry="14" fill="#EF5350"/>
+            <ellipse cx="338" cy="525" rx="7" ry="10" fill="#E53935"/>
+            <ellipse cx="352" cy="526" rx="7" ry="10" fill="#EF9A9A"/>
+            <circle cx="345" cy="521" r="5" fill="#FFCDD2"/>
+            <ellipse cx="208" cy="567" rx="14" ry="7" fill="#81C784" opacity="0.7"/>
+            <ellipse cx="370" cy="566" rx="12" ry="7" fill="#81C784" opacity="0.7"/>
 
-            <g>
-                <rect x="460" y="540" width="50" height="30" rx="6" fill="#263238"/>
-                <rect x="464" y="543" width="42" height="22" rx="4" fill="#37474F"/>
-                <rect x="468" y="547" width="34" height="14" rx="2" fill="#1B5E20"/>
-                <rect x="471" y="550" width="12" height="4" rx="1" fill="#4CAF50" opacity="0.8"/>
-                <rect x="471" y="556" width="8" height="3" rx="1" fill="#66BB6A" opacity="0.6"/>
-                <rect x="485" y="550" width="10" height="4" rx="1" fill="#F9A825" opacity="0.7"/>
-                <circle cx="494" cy="558" r="2.5" fill="#4CAF50" opacity="0.6"/>
-                <g opacity="0.4">
-                    <path d="M495 536 Q500 528 505 536" stroke="#4CAF50" stroke-width="1.5" fill="none"/>
-                    <path d="M498 533 Q503 525 508 533" stroke="#4CAF50" stroke-width="1" fill="none"/>
-                    <path d="M501 530 Q506 522 511 530" stroke="#4CAF50" stroke-width="0.8" fill="none"/>
+            <!-- FLOWER BED CENTER (sunflowers + mixed) -->
+            <ellipse cx="635" cy="566" rx="105" ry="17" fill="#4E342E" opacity="0.2"/>
+            <line x1="582" y1="566" x2="582" y2="516" stroke="#558B2F" stroke-width="3"/>
+            <circle cx="582" cy="512" r="22" fill="#FDD835"/>
+            <circle cx="582" cy="512" r="13" fill="#5D4037"/>
+            <ellipse cx="582" cy="489" rx="7" ry="11" fill="#FFEE58" opacity="0.9"/>
+            <ellipse cx="582" cy="535" rx="7" ry="11" fill="#FFEE58" opacity="0.9"/>
+            <ellipse cx="559" cy="512" rx="11" ry="7" fill="#FFEE58" opacity="0.9"/>
+            <ellipse cx="605" cy="512" rx="11" ry="7" fill="#FFEE58" opacity="0.9"/>
+            <ellipse cx="566" cy="496" rx="7" ry="11" fill="#FDD835" opacity="0.8" transform="rotate(-45,566,496)"/>
+            <ellipse cx="598" cy="496" rx="7" ry="11" fill="#FDD835" opacity="0.8" transform="rotate(45,598,496)"/>
+            <ellipse cx="566" cy="528" rx="7" ry="11" fill="#FDD835" opacity="0.8" transform="rotate(45,566,528)"/>
+            <ellipse cx="598" cy="528" rx="7" ry="11" fill="#FDD835" opacity="0.8" transform="rotate(-45,598,528)"/>
+            <path d="M582 542 Q560 542 544 530" stroke="#558B2F" stroke-width="2" fill="none"/>
+            <ellipse cx="541" cy="529" rx="11" ry="7" fill="#8BC34A" opacity="0.8"/>
+            <line x1="650" y1="568" x2="650" y2="524" stroke="#558B2F" stroke-width="2.5"/>
+            <circle cx="650" cy="519" r="17" fill="#FDD835"/>
+            <circle cx="650" cy="519" r="10" fill="#5D4037"/>
+            <ellipse cx="650" cy="501" rx="6" ry="9" fill="#FFEE58" opacity="0.9"/>
+            <ellipse cx="650" cy="537" rx="6" ry="9" fill="#FFEE58" opacity="0.9"/>
+            <ellipse cx="632" cy="519" rx="9" ry="6" fill="#FFEE58" opacity="0.9"/>
+            <ellipse cx="668" cy="519" rx="9" ry="6" fill="#FFEE58" opacity="0.9"/>
+            <line x1="697" y1="567" x2="697" y2="538" stroke="#388E3C" stroke-width="2"/>
+            <circle cx="697" cy="531" r="10" fill="#FF7043"/>
+            <circle cx="697" cy="531" r="5" fill="#FFEB3B"/>
+            <line x1="720" y1="568" x2="720" y2="540" stroke="#2E7D32" stroke-width="2"/>
+            <circle cx="720" cy="533" r="10" fill="#AB47BC"/>
+            <circle cx="720" cy="533" r="5" fill="#FDD835"/>
+
+            <!-- PATHWAY to house -->
+            <path d="M1092 596 Q1088 660 1085 730 Q1082 800 1086 870" stroke="#BCAAA4" stroke-width="30" stroke-linecap="round" opacity="0.35" fill="none"/>
+            <path d="M1092 596 Q1088 660 1085 730 Q1082 800 1086 870" stroke="#D7CCC8" stroke-width="22" stroke-linecap="round" opacity="0.3" fill="none"/>
+
+            <!-- LAWN DETAIL -->
+            <path d="M0 625 Q360 608 720 618 Q1080 628 1440 612" stroke="#4CAF50" stroke-width="1.2" opacity="0.25" fill="none"/>
+            <path d="M0 668 Q360 652 720 660 Q1080 672 1440 655" stroke="#66BB6A" stroke-width="1" opacity="0.18" fill="none"/>
+
+            <!-- IRRIGATION ZONES -->
+            <ellipse cx="440" cy="622" rx="130" ry="46" stroke="#A5D6A7" stroke-width="1" stroke-dasharray="10 8" fill="none" opacity="0.3"/>
+            <ellipse cx="720" cy="615" rx="118" ry="44" stroke="#A5D6A7" stroke-width="1" stroke-dasharray="10 8" fill="none" opacity="0.3"/>
+            <ellipse cx="990" cy="618" rx="110" ry="40" stroke="#A5D6A7" stroke-width="1" stroke-dasharray="10 8" fill="none" opacity="0.3"/>
+
+            <!-- SPRINKLER 1 (zone 1) -->
+            <line x1="440" y1="598" x2="440" y2="568" stroke="#78909C" stroke-width="5" stroke-linecap="round"/>
+            <rect x="434" y="558" width="12" height="12" rx="3" fill="#90A4AE"/>
+            <circle cx="440" cy="557" r="5" fill="#B0BEC5"/>
+            <path class="hwater" d="M440 558 Q355 458 268 502" stroke="url(#hwaterArc)" stroke-width="5.5" fill="none" filter="url(#hglow)"/>
+            <path class="hwater hwater--d1" d="M440 558 Q365 452 280 494" stroke="url(#hwaterArc)" stroke-width="3.5" fill="none" opacity="0.7"/>
+            <path class="hwater hwater--d2" d="M440 558 Q524 458 610 502" stroke="url(#hwaterArc)" stroke-width="5.5" fill="none" filter="url(#hglow)"/>
+            <path class="hwater hwater--d3" d="M440 558 Q517 452 600 494" stroke="url(#hwaterArc)" stroke-width="3.5" fill="none" opacity="0.7"/>
+            <path class="hwater hwater--d4" d="M440 558 Q436 455 432 525" stroke="url(#hwaterArc)" stroke-width="4" fill="none" opacity="0.5"/>
+            <circle cx="268" cy="502" r="4" fill="#E1F5FE" opacity="0.85" class="hwater-tip"/>
+            <circle cx="610" cy="502" r="4" fill="#E1F5FE" opacity="0.85" class="hwater-tip"/>
+
+            <!-- SPRINKLER 2 (zone 2) -->
+            <line x1="720" y1="592" x2="720" y2="562" stroke="#78909C" stroke-width="5" stroke-linecap="round"/>
+            <rect x="714" y="552" width="12" height="12" rx="3" fill="#90A4AE"/>
+            <circle cx="720" cy="551" r="5" fill="#B0BEC5"/>
+            <path class="hwater" d="M720 552 Q638 455 555 498" stroke="url(#hwaterArc)" stroke-width="5.5" fill="none" filter="url(#hglow)"/>
+            <path class="hwater hwater--d1" d="M720 552 Q646 450 568 492" stroke="url(#hwaterArc)" stroke-width="3.5" fill="none" opacity="0.7"/>
+            <path class="hwater hwater--d2" d="M720 552 Q802 455 885 498" stroke="url(#hwaterArc)" stroke-width="5.5" fill="none" filter="url(#hglow)"/>
+            <path class="hwater hwater--d3" d="M720 552 Q795 450 875 492" stroke="url(#hwaterArc)" stroke-width="3.5" fill="none" opacity="0.7"/>
+            <path class="hwater hwater--d4" d="M720 552 Q716 452 712 522" stroke="url(#hwaterArc)" stroke-width="4" fill="none" opacity="0.5"/>
+            <circle cx="555" cy="498" r="4" fill="#E1F5FE" opacity="0.85" class="hwater-tip"/>
+            <circle cx="885" cy="498" r="4" fill="#E1F5FE" opacity="0.85" class="hwater-tip"/>
+
+            <!-- SPRINKLER 3 (zone 3) -->
+            <line x1="990" y1="594" x2="990" y2="564" stroke="#78909C" stroke-width="5" stroke-linecap="round"/>
+            <rect x="984" y="554" width="12" height="12" rx="3" fill="#90A4AE"/>
+            <circle cx="990" cy="553" r="5" fill="#B0BEC5"/>
+            <path class="hwater" d="M990 554 Q908 456 824 500" stroke="url(#hwaterArc)" stroke-width="5.5" fill="none" filter="url(#hglow)"/>
+            <path class="hwater hwater--d1" d="M990 554 Q916 450 838 493" stroke="url(#hwaterArc)" stroke-width="3.5" fill="none" opacity="0.7"/>
+            <path class="hwater hwater--d2" d="M990 554 Q1072 456 1154 500" stroke="url(#hwaterArc)" stroke-width="5.5" fill="none" filter="url(#hglow)"/>
+            <path class="hwater hwater--d3" d="M990 554 Q1065 450 1148 493" stroke="url(#hwaterArc)" stroke-width="3.5" fill="none" opacity="0.7"/>
+            <circle cx="824" cy="500" r="4" fill="#E1F5FE" opacity="0.85" class="hwater-tip"/>
+            <circle cx="1154" cy="500" r="4" fill="#E1F5FE" opacity="0.85" class="hwater-tip"/>
+
+            <!-- SPRINKLER 4 (far left, near trees) -->
+            <line x1="200" y1="600" x2="200" y2="576" stroke="#78909C" stroke-width="4" stroke-linecap="round"/>
+            <circle cx="200" cy="573" r="5.5" fill="#90A4AE"/>
+            <path class="hwater hwater--d2" d="M200 573 Q150 512 104 538" stroke="url(#hwaterArc)" stroke-width="4" fill="none" opacity="0.6"/>
+            <path class="hwater" d="M200 573 Q250 512 296 538" stroke="url(#hwaterArc)" stroke-width="4" fill="none" opacity="0.6"/>
+
+            <!-- WI-FI CONTROLLER BADGE -->
+            <g class="hero-controller" transform="translate(1048,626)">
+                <rect x="-48" y="-30" width="96" height="58" rx="11" fill="#1B5E20" opacity="0.88"/>
+                <rect x="-44" y="-26" width="88" height="50" rx="9" fill="#2E7D32"/>
+                <rect x="-36" y="-20" width="72" height="30" rx="5" fill="#1B5E20" opacity="0.6"/>
+                <g fill="none" stroke="#F9A825" stroke-linecap="round" transform="translate(-4,-8)">
+                    <circle cx="0" cy="8" r="3" fill="#F9A825" stroke="none"/>
+                    <path d="M-8 4 Q0 -4 8 4" stroke-width="2.5"/>
+                    <path d="M-15 -2 Q0 -14 15 -2" stroke-width="2" opacity="0.75"/>
                 </g>
+                <rect x="18" y="-12" width="14" height="4" rx="2" fill="#F9A825" opacity="0.6"/>
+                <rect x="18" y="-5" width="10" height="3" rx="1.5" fill="#F9A825" opacity="0.5"/>
+                <rect x="18" y="1" width="8" height="3" rx="1.5" fill="#66BB6A" opacity="0.6"/>
+                <text x="0" y="28" fill="#F9A825" font-size="7.5" font-family="Inter,sans-serif" font-weight="700" text-anchor="middle" opacity="0.9">Wi-Fi управление</text>
             </g>
 
-            <g>
-                <rect x="130" y="550" width="12" height="40" rx="2" fill="#1565C0" opacity="0.4"/>
-                <ellipse cx="136" cy="548" rx="8" ry="3" fill="#42A5F5" opacity="0.3"/>
-            </g>
-
-            <path d="M0 640 Q400 625 800 635 Q1100 640 1440 630 V900 H0Z" fill="url(#hearth)"/>
-
-            <g>
-                <path d="M0 632 L1440 622" stroke="#A5D6A7" stroke-width="3" stroke-dasharray="12 8" opacity="0.6"/>
-                <g fill="#388E3C" opacity="0.4">
-                    <path d="M20 630 l5 -8 l5 8z"/>
-                    <path d="M60 628 l5 -8 l5 8z"/>
-                    <path d="M100 627 l5 -8 l5 8z"/>
-                    <path d="M140 626 l5 -8 l5 8z"/>
-                </g>
-            </g>
-
-            <g>
-                <rect x="340" y="670" width="900" height="10" rx="5" fill="url(#hpipe)" opacity="0.8"/>
-                <rect x="340" y="700" width="900" height="10" rx="5" fill="url(#hpipe)" opacity="0.6"/>
-                <rect x="340" y="730" width="500" height="10" rx="5" fill="url(#hpipe)" opacity="0.5"/>
-
-                <rect x="500" y="640" width="8" height="30" rx="3" fill="#42A5F5" opacity="0.7"/>
-                <rect x="750" y="640" width="8" height="30" rx="3" fill="#42A5F5" opacity="0.7"/>
-                <rect x="1000" y="640" width="8" height="30" rx="3" fill="#42A5F5" opacity="0.7"/>
-                <rect x="1250" y="640" width="8" height="30" rx="3" fill="#42A5F5" opacity="0.7"/>
-
-                <rect x="488" y="760" width="32" height="24" rx="4" fill="#2E7D32" opacity="0.7" stroke="#1B5E20" stroke-width="1"/>
-                <rect x="494" y="766" width="20" height="12" rx="2" fill="#4CAF50" opacity="0.5"/>
-
-                <rect x="738" y="760" width="32" height="24" rx="4" fill="#2E7D32" opacity="0.7" stroke="#1B5E20" stroke-width="1"/>
-                <rect x="744" y="766" width="20" height="12" rx="2" fill="#4CAF50" opacity="0.5"/>
-
-                <rect x="988" y="760" width="32" height="24" rx="4" fill="#2E7D32" opacity="0.7" stroke="#1B5E20" stroke-width="1"/>
-                <rect x="994" y="766" width="20" height="12" rx="2" fill="#4CAF50" opacity="0.5"/>
-
-                <g opacity="0.5">
-                    <path d="M360 675 L380 675" stroke="#B3E5FC" stroke-width="2" stroke-dasharray="4 4">
-                        <animate attributeName="stroke-dashoffset" values="0;-8" dur="1s" repeatCount="indefinite"/>
-                    </path>
-                    <path d="M400 675 L500 675" stroke="#B3E5FC" stroke-width="2" stroke-dasharray="4 4">
-                        <animate attributeName="stroke-dashoffset" values="0;-8" dur="1s" repeatCount="indefinite"/>
-                    </path>
-                    <path d="M520 675 L750 675" stroke="#B3E5FC" stroke-width="2" stroke-dasharray="4 4">
-                        <animate attributeName="stroke-dashoffset" values="0;-8" dur="1s" repeatCount="indefinite"/>
-                    </path>
-                    <path d="M770 675 L1000 675" stroke="#B3E5FC" stroke-width="2" stroke-dasharray="4 4">
-                        <animate attributeName="stroke-dashoffset" values="0;-8" dur="1s" repeatCount="indefinite"/>
-                    </path>
-                    <path d="M1020 675 L1240 675" stroke="#B3E5FC" stroke-width="2" stroke-dasharray="4 4">
-                        <animate attributeName="stroke-dashoffset" values="0;-8" dur="1s" repeatCount="indefinite"/>
-                    </path>
-                    <path d="M360 705 L600 705" stroke="#B3E5FC" stroke-width="2" stroke-dasharray="4 4">
-                        <animate attributeName="stroke-dashoffset" values="0;-8" dur="1.2s" repeatCount="indefinite"/>
-                    </path>
-                    <path d="M620 705 L900 705" stroke="#B3E5FC" stroke-width="2" stroke-dasharray="4 4">
-                        <animate attributeName="stroke-dashoffset" values="0;-8" dur="1.2s" repeatCount="indefinite"/>
-                    </path>
-                    <path d="M360 735 L600 735" stroke="#B3E5FC" stroke-width="1.5" stroke-dasharray="4 4">
-                        <animate attributeName="stroke-dashoffset" values="0;-8" dur="1.4s" repeatCount="indefinite"/>
-                    </path>
-                </g>
-
-                <g fill="#B3E5FC" opacity="0.4">
-                    <polygon points="500,680 506,677 506,683"/>
-                    <polygon points="750,680 756,677 756,683"/>
-                    <polygon points="1000,680 1006,677 1006,683"/>
-                    <polygon points="600,710 606,707 606,713"/>
-                    <polygon points="800,710 806,707 806,713"/>
-                </g>
-
-                <rect x="340" y="656" width="60" height="40" rx="6" fill="#1565C0" opacity="0.5"/>
-                <circle cx="370" cy="676" r="12" fill="#1976D2" opacity="0.4"/>
-                <path d="M365 676 L375 676 M370 671 L370 681" stroke="#B3E5FC" stroke-width="2" opacity="0.5"/>
-
-                <g transform="translate(860,720)" opacity="0.5">
-                    <path d="M0 0 L80 0 L80 4 L0 4Z" fill="#42A5F5" rx="2"/>
-                    <g opacity="0.6">
-                        <line x1="20" y1="8" x2="20" y2="20" stroke="#2E7D32" stroke-width="1"/>
-                        <circle cx="16" cy="6" r="2" fill="#4CAF50"/>
-                        <circle cx="24" cy="6" r="2" fill="#66BB6A"/>
-                        <line x1="40" y1="8" x2="40" y2="20" stroke="#2E7D32" stroke-width="1"/>
-                        <circle cx="36" cy="6" r="2" fill="#4CAF50"/>
-                        <circle cx="44" cy="6" r="2" fill="#66BB6A"/>
-                        <line x1="60" y1="8" x2="60" y2="20" stroke="#2E7D32" stroke-width="1"/>
-                        <circle cx="56" cy="6" r="2" fill="#4CAF50"/>
-                        <circle cx="64" cy="6" r="2" fill="#66BB6A"/>
-                    </g>
-                    <text x="40" y="-4" fill="#F9A825" font-size="8" font-family="Inter,sans-serif" font-weight="700" text-anchor="middle" opacity="0.6">капельный полив</text>
-                </g>
-
-                <text x="504" y="800" fill="#F9A825" font-size="9" font-family="Inter,sans-serif" font-weight="700" text-anchor="middle" opacity="0.5">ЗОНА 1</text>
-                <text x="754" y="800" fill="#F9A825" font-size="9" font-family="Inter,sans-serif" font-weight="700" text-anchor="middle" opacity="0.5">ЗОНА 2</text>
-                <text x="1004" y="800" fill="#F9A825" font-size="9" font-family="Inter,sans-serif" font-weight="700" text-anchor="middle" opacity="0.5">ЗОНА 3</text>
-            </g>
-
-            <g opacity="0.35">
-                <text x="370" y="860" fill="#BCAAA4" font-size="11" font-family="Inter,sans-serif" font-weight="600">трубы 30-40 см под землёй</text>
-                <text x="950" y="870" fill="#BCAAA4" font-size="11" font-family="Inter,sans-serif" font-weight="600">контроллер • клапаны • датчик дождя</text>
-            </g>
-
-            <g opacity="0.5" class="hero__droplets">
-                <circle cx="400" cy="510" r="3" fill="#E1F5FE">
-                    <animate attributeName="cy" values="490;560;490" dur="2s" repeatCount="indefinite"/>
-                    <animate attributeName="opacity" values="0.8;0;0.8" dur="2s" repeatCount="indefinite"/>
+            <!-- ANIMATED WATER DROPLETS -->
+            <g class="hero__droplets">
+                <circle cx="335" cy="510" r="3" fill="#E1F5FE">
+                    <animate attributeName="cy" values="492;562;492" dur="2s" repeatCount="indefinite" begin="0s"/>
+                    <animate attributeName="opacity" values="0.85;0;0.85" dur="2s" repeatCount="indefinite" begin="0s"/>
                 </circle>
-                <circle cx="600" cy="505" r="2.5" fill="#E1F5FE">
-                    <animate attributeName="cy" values="485;555;485" dur="2.3s" repeatCount="indefinite"/>
-                    <animate attributeName="opacity" values="0.7;0;0.7" dur="2.3s" repeatCount="indefinite"/>
+                <circle cx="550" cy="502" r="2.5" fill="#E1F5FE">
+                    <animate attributeName="cy" values="482;556;482" dur="2.3s" repeatCount="indefinite" begin="0.4s"/>
+                    <animate attributeName="opacity" values="0.75;0;0.75" dur="2.3s" repeatCount="indefinite" begin="0.4s"/>
                 </circle>
-                <circle cx="480" cy="520" r="2" fill="#E1F5FE">
-                    <animate attributeName="cy" values="505;570;505" dur="1.8s" repeatCount="indefinite"/>
-                    <animate attributeName="opacity" values="0.6;0;0.6" dur="1.8s" repeatCount="indefinite"/>
+                <circle cx="458" cy="522" r="2" fill="#E1F5FE">
+                    <animate attributeName="cy" values="506;572;506" dur="1.8s" repeatCount="indefinite" begin="0.7s"/>
+                    <animate attributeName="opacity" values="0.65;0;0.65" dur="1.8s" repeatCount="indefinite" begin="0.7s"/>
                 </circle>
-                <circle cx="700" cy="500" r="3" fill="#E1F5FE">
-                    <animate attributeName="cy" values="480;550;480" dur="2.1s" repeatCount="indefinite"/>
-                    <animate attributeName="opacity" values="0.7;0;0.7" dur="2.1s" repeatCount="indefinite"/>
+                <circle cx="695" cy="492" r="3" fill="#E1F5FE">
+                    <animate attributeName="cy" values="472;548;472" dur="2.1s" repeatCount="indefinite" begin="0.2s"/>
+                    <animate attributeName="opacity" values="0.75;0;0.75" dur="2.1s" repeatCount="indefinite" begin="0.2s"/>
                 </circle>
-                <circle cx="820" cy="510" r="2.5" fill="#E1F5FE">
-                    <animate attributeName="cy" values="490;560;490" dur="2.5s" repeatCount="indefinite"/>
-                    <animate attributeName="opacity" values="0.6;0;0.6" dur="2.5s" repeatCount="indefinite"/>
+                <circle cx="828" cy="502" r="2.5" fill="#E1F5FE">
+                    <animate attributeName="cy" values="482;558;482" dur="2.5s" repeatCount="indefinite" begin="1s"/>
+                    <animate attributeName="opacity" values="0.65;0;0.65" dur="2.5s" repeatCount="indefinite" begin="1s"/>
                 </circle>
-                <circle cx="950" cy="515" r="2" fill="#E1F5FE">
-                    <animate attributeName="cy" values="500;565;500" dur="2.2s" repeatCount="indefinite"/>
-                    <animate attributeName="opacity" values="0.5;0;0.5" dur="2.2s" repeatCount="indefinite"/>
+                <circle cx="948" cy="512" r="2" fill="#E1F5FE">
+                    <animate attributeName="cy" values="496;562;496" dur="2.2s" repeatCount="indefinite" begin="0.6s"/>
+                    <animate attributeName="opacity" values="0.55;0;0.55" dur="2.2s" repeatCount="indefinite" begin="0.6s"/>
                 </circle>
-                <circle cx="1050" cy="505" r="3" fill="#E1F5FE">
-                    <animate attributeName="cy" values="485;555;485" dur="1.9s" repeatCount="indefinite"/>
-                    <animate attributeName="opacity" values="0.6;0;0.6" dur="1.9s" repeatCount="indefinite"/>
+                <circle cx="1072" cy="502" r="3" fill="#E1F5FE">
+                    <animate attributeName="cy" values="482;552;482" dur="1.9s" repeatCount="indefinite" begin="1.2s"/>
+                    <animate attributeName="opacity" values="0.65;0;0.65" dur="1.9s" repeatCount="indefinite" begin="1.2s"/>
                 </circle>
-                <circle cx="1150" cy="510" r="2" fill="#E1F5FE">
-                    <animate attributeName="cy" values="495;560;495" dur="2.4s" repeatCount="indefinite"/>
-                    <animate attributeName="opacity" values="0.5;0;0.5" dur="2.4s" repeatCount="indefinite"/>
+                <circle cx="1142" cy="506" r="2" fill="#E1F5FE">
+                    <animate attributeName="cy" values="490;560;490" dur="2.4s" repeatCount="indefinite" begin="0.3s"/>
+                    <animate attributeName="opacity" values="0.55;0;0.55" dur="2.4s" repeatCount="indefinite" begin="0.3s"/>
                 </circle>
-                <circle cx="550" cy="530" r="2" fill="#E1F5FE">
-                    <animate attributeName="cy" values="515;575;515" dur="2.6s" repeatCount="indefinite"/>
-                    <animate attributeName="opacity" values="0.5;0;0.5" dur="2.6s" repeatCount="indefinite"/>
+                <circle cx="278" cy="522" r="2" fill="#E1F5FE">
+                    <animate attributeName="cy" values="505;570;505" dur="2.6s" repeatCount="indefinite" begin="0.9s"/>
+                    <animate attributeName="opacity" values="0.55;0;0.55" dur="2.6s" repeatCount="indefinite" begin="0.9s"/>
                 </circle>
-                <circle cx="900" cy="525" r="2.5" fill="#E1F5FE">
-                    <animate attributeName="cy" values="508;570;508" dur="2s" repeatCount="indefinite"/>
-                    <animate attributeName="opacity" values="0.6;0;0.6" dur="2s" repeatCount="indefinite"/>
+                <circle cx="880" cy="512" r="2.5" fill="#E1F5FE">
+                    <animate attributeName="cy" values="494;565;494" dur="2s" repeatCount="indefinite" begin="0.5s"/>
+                    <animate attributeName="opacity" values="0.65;0;0.65" dur="2s" repeatCount="indefinite" begin="0.5s"/>
+                </circle>
+                <circle cx="398" cy="498" r="2" fill="#E1F5FE">
+                    <animate attributeName="cy" values="480;550;480" dur="2.15s" repeatCount="indefinite" begin="1.4s"/>
+                    <animate attributeName="opacity" values="0.55;0;0.55" dur="2.15s" repeatCount="indefinite" begin="1.4s"/>
+                </circle>
+                <circle cx="768" cy="504" r="2" fill="#E1F5FE">
+                    <animate attributeName="cy" values="486;556;486" dur="2.35s" repeatCount="indefinite" begin="0.8s"/>
+                    <animate attributeName="opacity" values="0.55;0;0.55" dur="2.35s" repeatCount="indefinite" begin="0.8s"/>
                 </circle>
             </g>
+
+            <!-- ZONE LABELS -->
+            <text x="440" y="684" fill="#F9A825" font-size="9" font-family="Inter,sans-serif" font-weight="700" text-anchor="middle" opacity="0.45">ЗОНА 1</text>
+            <text x="720" y="678" fill="#F9A825" font-size="9" font-family="Inter,sans-serif" font-weight="700" text-anchor="middle" opacity="0.45">ЗОНА 2</text>
+            <text x="990" y="680" fill="#F9A825" font-size="9" font-family="Inter,sans-serif" font-weight="700" text-anchor="middle" opacity="0.45">ЗОНА 3</text>
         </svg>
     </div>
     <div class="hero__overlay"></div>
@@ -1244,6 +1215,10 @@
                     <input type="text" name="review_city" placeholder="Населённый пункт">
                 </div>
                 <textarea name="review_text" placeholder="Расскажите о вашем опыте работы с нами" rows="3" maxlength="500" required></textarea>
+                <div class="form-consent">
+                    <input type="checkbox" id="consent-review" name="consent_review" required>
+                    <label for="consent-review">Даю согласие на <a href="privacy.html" target="_blank">обработку персональных данных</a> в соответствии с ФЗ-152</label>
+                </div>
                 <button type="submit" class="btn btn--primary">Отправить отзыв</button>
             </form>
         </div>
@@ -1292,7 +1267,10 @@
                     </select>
                 </div>
                 <button type="submit" class="btn btn--primary btn--wide btn--lg">Получить расчёт бесплатно</button>
-                <p class="cta__disclaimer">Нажимая кнопку, вы соглашаетесь с политикой обработки персональных данных</p>
+                <div class="form-consent">
+                    <input type="checkbox" id="consent-cta" name="consent" required>
+                    <label for="consent-cta">Даю согласие на <a href="privacy.html" target="_blank">обработку персональных данных</a> согласно <a href="privacy.html" target="_blank">Политике конфиденциальности</a></label>
+                </div>
             </form>
         </div>
     </div>
@@ -1426,7 +1404,7 @@
             </div>
         </div>
         <div class="footer__bottom">
-            <p>&copy; 2011–2026 АвтополивУфа. Все права защищены.</p>
+            <p>&copy; 2011–2026 АвтополивУфа. Все права защищены. | <a href="privacy.html" style="color:rgba(255,255,255,.4);text-decoration:underline">Политика конфиденциальности</a></p>
         </div>
     </div>
 </footer>

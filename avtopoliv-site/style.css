@@ -422,3 +422,53 @@ body.nav-open{overflow:hidden}
 .footer__inner{gap:24px;padding-top:24px}
 .footer__col h4{margin-bottom:12px}
 }
+/* ── Hero scene CSS animations ── */
+@keyframes hWaterPulse{0%,100%{opacity:.5}50%{opacity:1}}
+@keyframes hWaterPulse2{0%,100%{opacity:.3}50%{opacity:.8}}
+@keyframes hCloudDrift{0%,100%{transform:translateX(0)}50%{transform:translateX(22px)}}
+@keyframes hCloudDrift2{0%,100%{transform:translateX(0)}50%{transform:translateX(-18px)}}
+@keyframes hSunPulse{0%,100%{opacity:.1}50%{opacity:.22}}
+@keyframes hFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+@keyframes hFadeIn{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+
+.hwater{animation:hWaterPulse 2.4s ease-in-out infinite}
+.hwater--d1{animation-delay:.4s}
+.hwater--d2{animation-delay:.8s}
+.hwater--d3{animation-delay:1.2s}
+.hwater--d4{animation-delay:.6s}
+.hwater-tip{animation:hWaterPulse2 2.4s ease-in-out infinite}
+.hero-cloud-1{animation:hCloudDrift 20s ease-in-out infinite;transform-box:fill-box;transform-origin:center}
+.hero-cloud-2{animation:hCloudDrift2 25s ease-in-out infinite;transform-box:fill-box;transform-origin:center}
+.hero-cloud-3{animation:hCloudDrift 32s ease-in-out infinite 3s;transform-box:fill-box;transform-origin:center}
+.hero-sun-outer{animation:hSunPulse 5s ease-in-out infinite}
+.hero-controller{animation:hFloat 3.5s ease-in-out infinite;transform-box:fill-box;transform-origin:center bottom}
+
+/* Hero content entrance */
+.hero__badge{animation:hFadeIn .7s .1s both}
+.hero h1{animation:hFadeIn .75s .3s both}
+.hero__subtitle{animation:hFadeIn .75s .5s both}
+.hero__actions{animation:hFadeIn .75s .7s both}
+.hero__stats{animation:hFadeIn .75s .9s both}
+
+/* Scroll-reveal (replaces JS-injected style) */
+.reveal{opacity:0;transform:translateY(30px);transition:opacity .6s cubic-bezier(.4,0,.2,1),transform .6s cubic-bezier(.4,0,.2,1)}
+.reveal.revealed{opacity:1;transform:translateY(0)}
+
+/* Stagger for grid items */
+.services__grid .service-card:nth-child(1).reveal{transition-delay:.05s}
+.services__grid .service-card:nth-child(2).reveal{transition-delay:.15s}
+.services__grid .service-card:nth-child(3).reveal{transition-delay:.25s}
+.benefits__grid .benefit:nth-child(1).reveal{transition-delay:.05s}
+.benefits__grid .benefit:nth-child(2).reveal{transition-delay:.15s}
+.benefits__grid .benefit:nth-child(3).reveal{transition-delay:.25s}
+.bonuses__grid .bonus-card:nth-child(1).reveal{transition-delay:.05s}
+.bonuses__grid .bonus-card:nth-child(2).reveal{transition-delay:.12s}
+.bonuses__grid .bonus-card:nth-child(3).reveal{transition-delay:.19s}
+.bonuses__grid .bonus-card:nth-child(4).reveal{transition-delay:.26s}
+
+/* 152-ФЗ consent checkbox styles */
+.form-consent{display:flex;align-items:flex-start;gap:10px;margin-top:4px}
+.form-consent input[type=checkbox]{width:18px;height:18px;flex-shrink:0;margin-top:2px;accent-color:var(--g7);cursor:pointer}
+.form-consent label{font-size:.8rem;color:var(--t5);line-height:1.5;cursor:pointer}
+.form-consent a{color:var(--g6);text-decoration:underline;transition:color .2s}
+.form-consent a:hover{color:var(--g8)}

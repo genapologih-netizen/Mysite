@@ -233,7 +233,4 @@
         revealObserver.observe(el);
     });
 
-    var style=document.createElement('style');
-    style.textContent='.reveal{opacity:0;transform:translateY(30px);transition:opacity .6s cubic-bezier(.4,0,.2,1),transform .6s cubic-bezier(.4,0,.2,1)}.reveal.revealed{opacity:1;transform:translateY(0)}';
-    document.head.appendChild(style);
 })();
