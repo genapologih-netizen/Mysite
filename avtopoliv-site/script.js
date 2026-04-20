@@ -49,36 +49,24 @@
     });
 
     var form=document.getElementById('cta-form');
+    var ctaThanks=document.getElementById('cta-thanks');
     form.addEventListener('submit',function(e){
         e.preventDefault();
+        var nameVal=form.querySelector('input[name=name]').value.trim();
+        var phoneVal=form.querySelector('input[name=phone]').value.trim();
+        if(!nameVal){form.querySelector('input[name=name]').focus();return;}
+        if(!phoneVal||phoneVal.length<6){form.querySelector('input[name=phone]').focus();return;}
         var formData=new FormData(form);
-        var name=formData.get('name')||'Не указано';
-        var phone=formData.get('phone')||'Не указан';
-        var city=formData.get('city')||'Не указан';
-        var area=formData.get('area')||'Не указана';
-        var areaLabels={small:'до 6 соток',medium:'6-15 соток',large:'15+ соток',unknown:'Не знаю'};
-        var areaText=areaLabels[area]||area;
-        var mailBody='Имя: '+name+'%0A'+
-                     'Телефон: '+phone+'%0A'+
-                     'Населённый пункт: '+city+'%0A'+
-                     'Площадь участка: '+areaText;
-        var mailLink='mailto:daynnapresse@gmail.com?subject=Заявка на расчёт автополива&body='+mailBody;
-        var tempLink=document.createElement('a');
-        tempLink.href=mailLink;
-        tempLink.click();
-        var btn=form.querySelector('button[type=submit]');
-        var original=btn.textContent;
-        btn.textContent='Заявка отправлена!';
-        btn.style.background='var(--g8)';
-        btn.disabled=true;
+        ctaThanks.classList.add('show');
         setTimeout(function(){
-            btn.textContent=original;
-            btn.style.background='';
-            btn.disabled=false;
+            ctaThanks.classList.remove('show');
             form.reset();
             var phoneField=form.querySelector('input[name=phone]');
             if(phoneField) phoneField.value='+7 ';
-        },3000);
+        },4000);
+    });
+    ctaThanks.addEventListener('click',function(e){
+        if(e.target===ctaThanks) ctaThanks.classList.remove('show');
     });
 
     var phoneInput=form.querySelector('input[name=phone]');
@@ -232,5 +220,64 @@
         el.classList.add('reveal');
         revealObserver.observe(el);
     });
+
+    // ── Lightbox ──
+    var lb=document.getElementById('lb');
+    var lbImg=document.getElementById('lb-img');
+    var lbCaption=document.getElementById('lb-caption');
+    var lbCounter=document.getElementById('lb-counter');
+    var lbClose=document.getElementById('lb-close');
+    var lbPrev=document.getElementById('lb-prev');
+    var lbNext=document.getElementById('lb-next');
+    var lbImages=[];
+    var lbIdx=0;
+
+    document.querySelectorAll('.portfolio-item').forEach(function(item){
+        var img=item.querySelector('.portfolio-item__img img');
+        var title=item.querySelector('.portfolio-item__info h3');
+        if(!img) return;
+        var idx=lbImages.length;
+        lbImages.push({src:img.src,alt:img.alt,caption:title?title.textContent:''});
+        item.querySelector('.portfolio-item__img').addEventListener('click',function(){lbOpen(idx);});
+    });
+
+    function lbOpen(idx){
+        lbIdx=idx;
+        lbRender();
+        lb.classList.add('show');
+        lb.setAttribute('aria-hidden','false');
+        document.body.style.overflow='hidden';
+    }
+    function lbClose2(){
+        lb.classList.remove('show');
+        lb.setAttribute('aria-hidden','true');
+        document.body.style.overflow='';
+    }
+    function lbRender(){
+        var d=lbImages[lbIdx];
+        lbImg.src=d.src;
+        lbImg.alt=d.alt;
+        lbCaption.textContent=d.caption;
+        lbCounter.textContent=(lbIdx+1)+' / '+lbImages.length;
+    }
+    lbClose.addEventListener('click',lbClose2);
+    lbPrev.addEventListener('click',function(){lbIdx=(lbIdx-1+lbImages.length)%lbImages.length;lbRender();});
+    lbNext.addEventListener('click',function(){lbIdx=(lbIdx+1)%lbImages.length;lbRender();});
+    lb.addEventListener('click',function(e){if(e.target===lb)lbClose2();});
+    document.addEventListener('keydown',function(e){
+        if(!lb.classList.contains('show'))return;
+        if(e.key==='Escape')lbClose2();
+        if(e.key==='ArrowLeft'){lbIdx=(lbIdx-1+lbImages.length)%lbImages.length;lbRender();}
+        if(e.key==='ArrowRight'){lbIdx=(lbIdx+1)%lbImages.length;lbRender();}
+    });
+    var lbTX=0;
+    lb.addEventListener('touchstart',function(e){lbTX=e.changedTouches[0].screenX;},false);
+    lb.addEventListener('touchend',function(e){
+        var diff=lbTX-e.changedTouches[0].screenX;
+        if(Math.abs(diff)>40){
+            lbIdx=diff>0?(lbIdx+1)%lbImages.length:(lbIdx-1+lbImages.length)%lbImages.length;
+            lbRender();
+        }
+    },false);
 
 })();
