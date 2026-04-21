@@ -48,25 +48,81 @@
         });
     });
 
-    var form=document.getElementById('cta-form');
-    var ctaThanks=document.getElementById('cta-thanks');
-    form.addEventListener('submit',function(e){
+    var N8N_WEBHOOK_URL = 'https://kabanit.ru/webhook/kabanit-form';
+
+    var form = document.getElementById('cta-form');
+    var ctaThanks = document.getElementById('cta-thanks');
+
+    function showMessage(text, type) {
+        var msg = document.getElementById('formMessage');
+        msg.textContent = text;
+        msg.className = 'form-message ' + type;
+        msg.style.display = 'block';
+        msg.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        setTimeout(function() { msg.style.display = 'none'; }, 6000);
+    }
+
+    form.addEventListener('submit', async function(e) {
         e.preventDefault();
-        var nameVal=form.querySelector('input[name=name]').value.trim();
-        var phoneVal=form.querySelector('input[name=phone]').value.trim();
-        if(!nameVal){form.querySelector('input[name=name]').focus();return;}
-        if(!phoneVal||phoneVal.length<6){form.querySelector('input[name=phone]').focus();return;}
-        var formData=new FormData(form);
-        ctaThanks.classList.add('show');
-        setTimeout(function(){
-            ctaThanks.classList.remove('show');
+
+        var submitBtn = form.querySelector('button[type=submit]');
+        if (submitBtn.disabled) return;
+
+        var nameVal = form.querySelector('input[name=name]').value.trim();
+        var phoneVal = form.querySelector('input[name=phone]').value.trim();
+        var consent = form.querySelector('#consent-cta').checked;
+        var areaVal = form.querySelector('select[name=area]').value;
+
+        if (!nameVal) { form.querySelector('input[name=name]').focus(); return; }
+        if (!phoneVal || phoneVal.length < 6) { form.querySelector('input[name=phone]').focus(); return; }
+        if (!areaVal) { showMessage('Пожалуйста, выберите площадь участка.', 'error'); return; }
+        if (!consent) { showMessage('Пожалуйста, дайте согласие на обработку персональных данных.', 'error'); return; }
+
+        var originalText = submitBtn.textContent;
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Отправляем...';
+
+        var payload = {
+            name: nameVal,
+            phone: phoneVal,
+            city: form.querySelector('input[name=city]').value.trim(),
+            area: areaVal,
+            consent: consent,
+            source: 'avtopoliv-site',
+            form_id: 'cta-form',
+            page_url: window.location.href,
+            referrer: document.referrer,
+            user_agent: navigator.userAgent,
+            timestamp: new Date().toISOString()
+        };
+
+        try {
+            var response = await fetch(N8N_WEBHOOK_URL, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(payload)
+            });
+            if (!response.ok) throw new Error('HTTP ' + response.status);
+            showMessage('✅ Спасибо! Мы свяжемся с вами в ближайшее время.', 'success');
+            ctaThanks.classList.add('show');
+            setTimeout(function() { ctaThanks.classList.remove('show'); }, 4000);
             form.reset();
-            var phoneField=form.querySelector('input[name=phone]');
-            if(phoneField) phoneField.value='+7 ';
-        },4000);
+            var phoneField = form.querySelector('input[name=phone]');
+            if (phoneField) phoneField.value = '+7 ';
+            submitBtn.textContent = 'Отправлено ✓';
+            setTimeout(function() {
+                submitBtn.disabled = false;
+                submitBtn.textContent = originalText;
+            }, 30000);
+        } catch (err) {
+            showMessage('❌ Ошибка при отправке. Позвоните нам: +7 (937) 322-49-05', 'error');
+            submitBtn.disabled = false;
+            submitBtn.textContent = originalText;
+        }
     });
-    ctaThanks.addEventListener('click',function(e){
-        if(e.target===ctaThanks) ctaThanks.classList.remove('show');
+
+    ctaThanks.addEventListener('click', function(e) {
+        if (e.target === ctaThanks) ctaThanks.classList.remove('show');
     });
 
     var phoneInput=form.querySelector('input[name=phone]');

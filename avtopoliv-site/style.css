@@ -474,11 +474,18 @@ body.nav-open{overflow:hidden}
 .bonuses__grid .bonus-card:nth-child(4).reveal{transition-delay:.26s}
 
 /* 152-ФЗ consent checkbox styles */
-.form-consent{display:flex;align-items:flex-start;gap:10px;margin-top:4px}
-.form-consent input[type=checkbox]{width:18px;height:18px;flex-shrink:0;margin-top:2px;accent-color:var(--g7);cursor:pointer}
-.form-consent label{font-size:.8rem;color:var(--t5);line-height:1.5;cursor:pointer}
-.form-consent a{color:var(--g6);text-decoration:underline;transition:color .2s}
-.form-consent a:hover{color:var(--g8)}
+.form-consent{display:flex;align-items:flex-start;gap:10px;margin:16px 0 18px;cursor:pointer;user-select:none;font-size:13px;line-height:1.45;color:var(--t5)}
+.form-consent__input{position:absolute;opacity:0;width:0;height:0;pointer-events:none}
+.form-consent__box{flex-shrink:0;width:20px;height:20px;margin-top:1px;border:2px solid #cfd3d8;border-radius:4px;background:#fff;display:flex;align-items:center;justify-content:center;transition:border-color .15s,background .15s}
+.form-consent__check{width:14px;height:14px;fill:none;stroke:#fff;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;opacity:0;transform:scale(.7);transition:opacity .15s,transform .15s}
+.form-consent__input:checked+.form-consent__box{background:var(--g7);border-color:var(--g7)}
+.form-consent__input:checked+.form-consent__box .form-consent__check{opacity:1;transform:scale(1)}
+.form-consent__input:focus-visible+.form-consent__box{outline:2px solid var(--g7);outline-offset:2px}
+.form-consent:hover .form-consent__box{border-color:var(--g7)}
+.form-consent__text{font-size:13px;line-height:1.45;color:var(--t5)}
+.form-consent__text a{color:var(--g6);text-decoration:underline;text-underline-offset:2px;transition:color .2s}
+.form-consent__text a:hover{color:var(--g8)}
+@media(max-width:480px){.form-consent{font-size:12px;gap:8px}.form-consent__box{width:18px;height:18px}}
 
 /* ── Lightbox ── */
 .portfolio-item__img{cursor:zoom-in}
@@ -511,3 +518,19 @@ body.nav-open{overflow:hidden}
 .cta-thanks__icon svg{width:36px;height:36px}
 .cta-thanks h3{font-size:1.5rem;font-weight:800;color:var(--t1);margin-bottom:10px}
 .cta-thanks p{font-size:1rem;color:var(--t5);line-height:1.5}
+
+.form-message{margin-top:15px;padding:12px 16px;border-radius:8px;text-align:center;font-size:.92rem;font-weight:500;animation:fadeIn .3s ease}
+.form-message.success{background:#d4edda;color:#155724;border:1px solid #c3e6cb}
+.form-message.error{background:#f8d7da;color:#721c24;border:1px solid #f5c6cb}
+@keyframes fadeIn{from{opacity:0;transform:translateY(-6px)}to{opacity:1;transform:translateY(0)}}
+.btn:disabled{opacity:.6;cursor:not-allowed}
+
+/* ── Cookie banner ── */
+.cookie-banner{position:fixed;bottom:0;left:0;right:0;z-index:9999;background:#1a1a1a;color:#fff;padding:16px 20px;box-shadow:0 -4px 20px rgba(0,0,0,.2);border-top:2px solid #388e3c}
+.cookie-banner[hidden]{display:none!important}
+.cookie-banner__inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+.cookie-banner__text{flex:1;min-width:260px;margin:0;font-size:13px;line-height:1.5;color:#e0e0e0}
+.cookie-banner__text a{color:#8bc34a;text-decoration:underline}
+.cookie-banner__btn{flex-shrink:0;padding:10px 24px;background:#388e3c;color:#fff;border:none;border-radius:6px;font-size:14px;font-weight:600;cursor:pointer;transition:background .15s}
+.cookie-banner__btn:hover{background:#2e7d32}
+@media(max-width:600px){.cookie-banner__inner{flex-direction:column;align-items:stretch}.cookie-banner__btn{width:100%}}

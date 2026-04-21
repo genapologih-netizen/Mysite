@@ -894,10 +894,13 @@
                     <input type="text" name="review_city" placeholder="Населённый пункт">
                 </div>
                 <textarea name="review_text" placeholder="Расскажите о вашем опыте работы с нами" rows="3" maxlength="500" required></textarea>
-                <div class="form-consent">
-                    <input type="checkbox" id="consent-review" name="consent_review" required>
-                    <label for="consent-review">Даю согласие на <a href="privacy.html" target="_blank">обработку персональных данных</a> в соответствии с ФЗ-152</label>
-                </div>
+                <label class="form-consent" for="consent-review">
+                  <input type="checkbox" id="consent-review" name="consent_review" class="form-consent__input" required>
+                  <span class="form-consent__box" aria-hidden="true">
+                    <svg viewBox="0 0 16 16" class="form-consent__check"><polyline points="3.5 8.5 7 12 12.5 5"></polyline></svg>
+                  </span>
+                  <span class="form-consent__text">Даю согласие на <a href="/privacy.html" target="_blank" rel="noopener">обработку персональных данных</a> в соответствии с ФЗ-152</span>
+                </label>
                 <button type="submit" class="btn btn--primary">Отправить отзыв</button>
             </form>
         </div>
@@ -937,20 +940,24 @@
                     <input type="text" name="city" placeholder="Населённый пункт">
                 </div>
                 <div class="form-group">
-                    <select name="area">
-                        <option value="" disabled selected>Площадь участка</option>
-                        <option value="small">до 6 соток</option>
-                        <option value="medium">6–15 соток</option>
-                        <option value="large">15+ соток</option>
-                        <option value="unknown">Не знаю</option>
+                    <select name="area" id="area">
+                        <option value="" disabled selected>Выберите площадь</option>
+                        <option value="до 6 соток">до 6 соток</option>
+                        <option value="6-15 соток">6–15 соток</option>
+                        <option value="15+ соток">15+ соток</option>
+                        <option value="Не знаю">Не знаю</option>
                     </select>
                 </div>
+                <label class="form-consent" for="consent-cta">
+                  <input type="checkbox" id="consent-cta" name="consent" class="form-consent__input" required>
+                  <span class="form-consent__box" aria-hidden="true">
+                    <svg viewBox="0 0 16 16" class="form-consent__check"><polyline points="3.5 8.5 7 12 12.5 5"></polyline></svg>
+                  </span>
+                  <span class="form-consent__text">Даю согласие на <a href="/privacy.html" target="_blank" rel="noopener">обработку персональных данных</a> согласно <a href="/privacy.html" target="_blank" rel="noopener">Политике конфиденциальности</a></span>
+                </label>
                 <button type="submit" class="btn btn--primary btn--wide btn--lg">Получить расчёт бесплатно</button>
-                <div class="form-consent">
-                    <input type="checkbox" id="consent-cta" name="consent" required>
-                    <label for="consent-cta">Даю согласие на <a href="privacy.html" target="_blank">обработку персональных данных</a> согласно <a href="privacy.html" target="_blank">Политике конфиденциальности</a></label>
-                </div>
             </form>
+            <div id="formMessage" class="form-message" style="display:none;"></div>
         </div>
     </div>
 </section>
@@ -1148,5 +1155,15 @@
 </div>
 
 <script src="script.js"></script>
+
+<div id="cookie-banner" class="cookie-banner" hidden>
+    <div class="cookie-banner__inner">
+        <p class="cookie-banner__text">
+            Мы используем cookie-файлы для работы сайта и аналитики Яндекс.Метрики. Продолжая использовать сайт, вы соглашаетесь с <a href="/privacy.html" target="_blank">Политикой конфиденциальности</a>.
+        </p>
+        <button type="button" class="cookie-banner__btn" id="cookie-accept">Принять</button>
+    </div>
+</div>
+<script src="js/cookie-banner.js"></script>
 </body>
 </html>
