@@ -240,7 +240,7 @@
         waModal.classList.remove('show');
     });
     waModal.addEventListener('click',function(e){
-        if(e.target===waModal) return;
+        if(e.target===waModal) waModal.classList.remove('show');
     });
 
     var reviewForm=document.getElementById('review-form');
