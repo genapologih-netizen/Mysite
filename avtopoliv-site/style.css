@@ -316,6 +316,10 @@ body.nav-open{overflow:hidden}
 .footer__messenger:hover{background:var(--g7);transform:translateY(-2px)}
 .footer__bottom{padding:28px 0;text-align:center}
 .footer__bottom p{font-size:.78rem;color:rgba(255,255,255,.25)}
+.footer__legal-links{margin-top:10px;display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap}
+.footer__legal-link{color:rgba(255,255,255,.4);text-decoration:underline;text-underline-offset:3px;transition:color .2s}
+.footer__legal-link:hover{color:rgba(255,255,255,.75)}
+.footer__legal-sep{color:rgba(255,255,255,.2);font-size:.75rem}
 
 @media(max-width:1024px){
 .hero h1{font-size:2.8rem}

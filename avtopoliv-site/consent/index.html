@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Согласие на обработку персональных данных — АвтополивУфа</title>
+    <meta name="robots" content="noindex,follow">
+    <meta name="description" content="Согласие на обработку персональных данных — текст согласия, которое даёт пользователь при заполнении форм на сайте АвтополивУфа.">
+    <link rel="canonical" href="https://автополив-уфа.рф/consent/">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+        :root{
+            --g7:#388e3c;--g8:#2e7d32;--g0:#e8f5e9;--g1:#c8e6c9;
+            --t1:#0d1117;--t2:#1a2332;--t4:#546178;--t5:#8494a7;--t7:#eceff1;
+            --gold:#F9A825;--d1:#0a0f1a;
+            --r:16px;--ease:cubic-bezier(.4,0,.2,1)
+        }
+        html{scroll-behavior:smooth;font-size:16px}
+        body{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;color:var(--t1);background:#fff;line-height:1.6;-webkit-font-smoothing:antialiased}
+        a{text-decoration:none;color:var(--g7)}
+        a:hover{text-decoration:underline}
+        .header{background:var(--d1);padding:0}
+        .header__topline{height:4px;background:linear-gradient(90deg,#C62828,var(--gold),#43a047,var(--gold),#C62828)}
+        .header__inner{max-width:1200px;margin:0 auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between;height:72px}
+        .logo{display:flex;align-items:center;gap:10px;font-size:1.2rem;font-weight:800;color:#fff;letter-spacing:-.02em}
+        .logo__icon{width:32px;height:32px;color:#fff}
+        .logo__accent{color:var(--gold)}
+        .back-link{font-size:.9rem;font-weight:600;color:rgba(255,255,255,.7);display:flex;align-items:center;gap:6px;transition:color .2s}
+        .back-link:hover{color:#fff;text-decoration:none}
+        .back-link svg{width:16px;height:16px}
+        .main{max-width:760px;margin:0 auto;padding:60px 24px 80px}
+        .doc-header{margin-bottom:48px;padding-bottom:32px;border-bottom:2px solid var(--t7)}
+        .doc-header h1{font-size:2rem;font-weight:900;color:var(--t1);margin-bottom:12px;letter-spacing:-.02em}
+        .doc-meta{font-size:.88rem;color:var(--t5);display:flex;gap:24px;flex-wrap:wrap}
+        .doc-meta span{display:flex;align-items:center;gap:6px}
+        .doc-alert{background:var(--g0);border:1px solid var(--g1);border-left:4px solid var(--g7);border-radius:var(--r);padding:20px 24px;margin-bottom:40px;font-size:.92rem;color:var(--t2);line-height:1.6}
+        .doc-alert strong{color:var(--g8)}
+        .section{margin-bottom:40px}
+        .section h2{font-size:1.2rem;font-weight:800;color:var(--t1);margin-bottom:16px;padding-bottom:8px;border-bottom:1px solid var(--t7);display:flex;align-items:center;gap:10px}
+        .section h2 .num{display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;background:var(--g7);color:#fff;border-radius:50%;font-size:.82rem;font-weight:800;flex-shrink:0}
+        .section p{font-size:.95rem;color:var(--t2);line-height:1.7;margin-bottom:12px}
+        .section p:last-child{margin-bottom:0}
+        .section ul{margin:8px 0 12px 0;padding-left:20px;display:flex;flex-direction:column;gap:6px}
+        .section ul li{font-size:.92rem;color:var(--t2);line-height:1.6}
+        .section ul li::marker{color:var(--g7)}
+        .consent-block{background:var(--t7);border-radius:var(--r);padding:28px;margin-top:8px;font-size:.92rem;color:var(--t2);line-height:1.8}
+        .consent-block p{margin-bottom:14px}
+        .consent-block p:last-child{margin-bottom:0}
+        .consent-block strong{color:var(--t1)}
+        .contact-box{background:var(--d1);color:rgba(255,255,255,.8);border-radius:var(--r);padding:28px;margin-top:40px}
+        .contact-box h3{color:#fff;font-size:1rem;font-weight:700;margin-bottom:16px}
+        .contact-box a{color:var(--gold)}
+        .contact-box a:hover{color:#FDD835}
+        .contact-box p{font-size:.88rem;line-height:1.6;margin-bottom:8px}
+        .contact-box p:last-child{margin-bottom:0}
+        .footer-doc{background:var(--d1);padding:24px;text-align:center}
+        .footer-doc p{font-size:.78rem;color:rgba(255,255,255,.3)}
+        .footer-doc a{color:rgba(255,255,255,.5)}
+        .footer-doc__links{margin-top:8px;display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap}
+        .footer-doc__link{color:rgba(255,255,255,.4);text-decoration:underline;text-underline-offset:3px;font-size:.75rem;transition:color .2s}
+        .footer-doc__link:hover{color:rgba(255,255,255,.75)}
+        .footer-doc__sep{color:rgba(255,255,255,.2);font-size:.75rem}
+        @media(max-width:640px){
+            .doc-header h1{font-size:1.5rem}
+            .main{padding:40px 16px 60px}
+        }
+        .cookie-banner{position:fixed;bottom:0;left:0;right:0;z-index:9999;background:#1a1a1a;color:#fff;padding:16px 20px;box-shadow:0 -4px 20px rgba(0,0,0,.2);border-top:2px solid #388e3c}
+        .cookie-banner[hidden]{display:none!important}
+        .cookie-banner__inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+        .cookie-banner__text{flex:1;min-width:260px;margin:0;font-size:13px;line-height:1.5;color:#e0e0e0}
+        .cookie-banner__text a{color:#8bc34a;text-decoration:underline}
+        .cookie-banner__btn{flex-shrink:0;padding:10px 24px;background:#388e3c;color:#fff;border:none;border-radius:6px;font-size:14px;font-weight:600;cursor:pointer;transition:background .15s}
+        .cookie-banner__btn:hover{background:#2e7d32}
+        @media(max-width:600px){.cookie-banner__inner{flex-direction:column;align-items:stretch}.cookie-banner__btn{width:100%}}
+    </style>
+</head>
+<body>
+
+<header class="header">
+    <div class="header__topline" aria-hidden="true"></div>
+    <div class="header__inner">
+        <a href="/" class="logo">
+            <svg class="logo__icon" viewBox="0 0 40 40" fill="none">
+                <circle cx="20" cy="20" r="18" stroke="currentColor" stroke-width="2.5"/>
+                <path d="M20 8 L20 28 M14 18 Q20 12 26 18 M16 22 Q20 18 24 22" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+            <span>Автополив<span class="logo__accent">Уфа</span></span>
+        </a>
+        <a href="/" class="back-link">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+            На главную
+        </a>
+    </div>
+</header>
+
+<main class="main">
+    <div class="doc-header">
+        <h1>Согласие на обработку персональных данных</h1>
+        <div class="doc-meta">
+            <span>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                Дата публикации: 20.04.2026
+            </span>
+            <span>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+                152-ФЗ «О персональных данных»
+            </span>
+        </div>
+    </div>
+
+    <div class="doc-alert">
+        <strong>Как выражается согласие:</strong> Отмечая чекбокс «Даю согласие на обработку персональных данных» и нажимая кнопку отправки формы на сайте <strong>автополив-уфа.рф</strong>, вы подтверждаете ознакомление с настоящим документом и даёте согласие на условиях, указанных ниже.
+    </div>
+
+    <div class="section">
+        <h2><span class="num">1</span> Кто даёт согласие</h2>
+        <p>Субъект персональных данных — дееспособное физическое лицо (далее — «Пользователь»), самостоятельно заполнившее форму обратной связи на сайте <strong>автополив-уфа.рф</strong> и проставившее отметку о согласии.</p>
+        <p>Согласие считается данным добровольно, конкретно, информированно и осознанно в соответствии с требованиями ст. 9 Федерального закона от 27.07.2006 № 152-ФЗ «О персональных данных».</p>
+    </div>
+
+    <div class="section">
+        <h2><span class="num">2</span> Оператор персональных данных</h2>
+        <p><strong>Курбанов Рустам Якубович</strong>, применяющий специальный налоговый режим «Налог на профессиональный доход» (НПД), ИНН 298303508048, г. Уфа, Республика Башкортостан, осуществляющий деятельность под брендом «АвтополивУфа» (далее — «Оператор»).</p>
+        <p>Контактный email: <a href="mailto:kurbanjacordions@mail.ru">kurbanjacordions@mail.ru</a>, телефон: <a href="tel:+79373224905">+7 (937) 322-49-05</a>.</p>
+    </div>
+
+    <div class="section">
+        <h2><span class="num">3</span> Перечень персональных данных</h2>
+        <p>Пользователь даёт согласие на обработку следующих персональных данных:</p>
+        <ul>
+            <li>имя (может быть вымышленным);</li>
+            <li>номер телефона;</li>
+            <li>населённый пункт;</li>
+            <li>приблизительная площадь участка (не является персональными данными, но передаётся в рамках той же формы).</li>
+        </ul>
+        <p>Специальные категории персональных данных (сведения о здоровье, биометрические данные, политические взгляды и пр.) Оператором не запрашиваются и не обрабатываются.</p>
+    </div>
+
+    <div class="section">
+        <h2><span class="num">4</span> Цели обработки</h2>
+        <p>Персональные данные обрабатываются исключительно в следующих целях:</p>
+        <ul>
+            <li>обратная связь с Пользователем по поданной заявке на расчёт стоимости автоматического полива;</li>
+            <li>предоставление консультации и коммерческого предложения;</li>
+            <li>заключение и исполнение договора на оказание услуг по монтажу и обслуживанию систем автоматического полива.</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2><span class="num">5</span> Действия с персональными данными</h2>
+        <p>Оператор вправе совершать следующие действия с персональными данными:</p>
+        <ul>
+            <li>сбор, запись, систематизация;</li>
+            <li>накопление, хранение;</li>
+            <li>уточнение (обновление, изменение);</li>
+            <li>использование — исключительно для связи с Пользователем по заявке;</li>
+            <li>передача — только Email-сервису для доставки уведомления Оператору (имя и телефон не передаются в Telegram и Яндекс.Метрику);</li>
+            <li>блокирование, удаление, уничтожение — по запросу Пользователя или по истечении срока хранения.</li>
+        </ul>
+        <p>Обработка осуществляется смешанным способом (с использованием средств автоматизации и без таковых).</p>
+    </div>
+
+    <div class="section">
+        <h2><span class="num">6</span> Срок действия согласия</h2>
+        <p>Согласие действует с момента отметки чекбокса и до момента его отзыва Пользователем либо истечения <strong>3 (трёх) лет</strong> с даты подачи заявки — в зависимости от того, что наступит раньше.</p>
+        <p>По истечении срока данные удаляются или обезличиваются в течение 30 дней.</p>
+    </div>
+
+    <div class="section">
+        <h2><span class="num">7</span> Отзыв согласия</h2>
+        <p>Пользователь вправе отозвать настоящее согласие в любой момент, направив письменный запрос на email: <a href="mailto:kurbanjacordions@mail.ru">kurbanjacordions@mail.ru</a> с пометкой «Отзыв согласия на обработку ПДн».</p>
+        <p>Оператор прекращает обработку и удаляет данные в течение <strong>30 дней</strong> с момента получения запроса.</p>
+        <p>Отзыв согласия не влияет на законность обработки, осуществлённой до его получения (п. 5 ст. 9 ФЗ-152).</p>
+    </div>
+
+    <div class="section">
+        <h2><span class="num">8</span> Текст согласия</h2>
+        <p>При отправке формы Пользователь подтверждает следующее:</p>
+        <div class="consent-block">
+            <p>Я, нижеподписавшийся (-аяся) Пользователь, добровольно, своей волей и в своём интересе, в соответствии с требованиями Федерального закона от 27.07.2006 № 152-ФЗ «О персональных данных», <strong>даю согласие</strong> Курбанову Рустаму Якубовичу, применяющему НПД (бренд «АвтополивУфа»), на обработку моих персональных данных: имени, номера телефона и населённого пункта — в целях обратной связи по заявке на расчёт стоимости услуг автоматического полива.</p>
+            <p>Настоящее согласие действует в течение 3 (трёх) лет с момента его предоставления. Я осведомлён(-а) о праве отозвать настоящее согласие путём направления соответствующего письменного обращения Оператору.</p>
+            <p>Я подтверждаю, что ознакомился(-ась) с <a href="/policy/">Политикой конфиденциальности</a> и полностью согласен(-на) с её условиями.</p>
+        </div>
+    </div>
+
+    <div class="contact-box">
+        <h3>Контакты оператора персональных данных</h3>
+        <p><strong>Оператор:</strong> Курбанов Рустам Якубович (самозанятый, НПД)</p>
+        <p><strong>ИНН:</strong> 298303508048</p>
+        <p><strong>Адрес:</strong> г. Уфа, Республика Башкортостан</p>
+        <p><strong>Email:</strong> <a href="mailto:kurbanjacordions@mail.ru">kurbanjacordions@mail.ru</a></p>
+        <p><strong>Телефон:</strong> <a href="tel:+79373224905">+7 (937) 322-49-05</a></p>
+        <p style="margin-top:14px;font-size:.82rem;color:rgba(255,255,255,.5)">По вопросам обработки персональных данных обращайтесь с пометкой «Персональные данные» в теме письма.</p>
+    </div>
+</main>
+
+<footer class="footer-doc">
+    <p>&copy; 2011–2026 АвтополивУфа. <a href="/">Вернуться на главную</a></p>
+    <div class="footer-doc__links">
+        <a href="/policy/" class="footer-doc__link">Политика конфиденциальности</a>
+        <span class="footer-doc__sep">|</span>
+        <a href="/consent/" class="footer-doc__link">Согласие на обработку ПДн</a>
+        <span class="footer-doc__sep">|</span>
+        <a href="/offer/" class="footer-doc__link">Публичная оферта</a>
+    </div>
+</footer>
+
+<div id="cookie-banner" class="cookie-banner" hidden>
+    <div class="cookie-banner__inner">
+        <p class="cookie-banner__text">
+            Мы используем cookie-файлы для работы сайта и аналитики Яндекс.Метрики. Продолжая использовать сайт, вы соглашаетесь с <a href="/policy/" target="_blank">Политикой конфиденциальности</a>.
+        </p>
+        <button type="button" class="cookie-banner__btn" id="cookie-accept">Принять</button>
+    </div>
+</div>
+<script src="/js/cookie-banner.js"></script>
+</body>
+</html>
