@@ -251,7 +251,7 @@
         var mailBody='Имя: '+formData.get('review_name')+'%0A'+
                      'Город: '+(formData.get('review_city')||'не указан')+'%0A'+
                      'Отзыв: '+formData.get('review_text');
-        var mailLink='mailto:daynnapresse@gmail.com?subject=Новый отзыв с сайта&body='+mailBody;
+        var mailLink='mailto:kurbanjacordions@mail.ru?subject=Новый отзыв с сайта&body='+mailBody;
         var tempLink=document.createElement('a');
         tempLink.href=mailLink;
         tempLink.click();
