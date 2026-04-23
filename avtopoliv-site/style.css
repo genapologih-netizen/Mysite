@@ -7,7 +7,7 @@
 --w:#fff;--sh-s:0 2px 8px rgba(0,0,0,.1);--sh-m:0 8px 30px rgba(0,0,0,.12);--sh-l:0 20px 60px rgba(0,0,0,.15);--sh-xl:0 32px 80px rgba(0,0,0,.18);
 --r:16px;--r-l:24px;--ease:cubic-bezier(.4,0,.2,1)
 }
-html{scroll-behavior:smooth;font-size:16px;overflow-x:hidden;width:100%}
+html{scroll-behavior:smooth;font-size:16px;overflow-x:hidden;width:100%;touch-action:pan-y}
 body{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;color:var(--t1);background:var(--w);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden;max-width:100%;width:100%;position:relative}
 a{text-decoration:none;color:inherit}ul{list-style:none}img,svg{display:block;max-width:100%}
 .container{max-width:1200px;margin:0 auto;padding:0 24px}
@@ -212,9 +212,9 @@ body.nav-open{overflow:hidden}
 .portfolio__more p{font-size:1rem;color:var(--t5);margin-bottom:20px}
 
 .reviews{padding:96px 0;background:linear-gradient(135deg,#FFFDE7 0%,var(--g0) 50%,#FFF8E1 100%);overflow:hidden}
-.reviews__slider{position:relative;overflow:hidden}
+.reviews__slider{position:relative;overflow:hidden;-webkit-transform:translateZ(0);transform:translateZ(0)}
 .reviews__track{display:flex;transition:transform .5s var(--ease)}
-.review-card{min-width:100%;padding:48px 56px;background:var(--w);border-radius:var(--r-l);box-shadow:none;border:1px solid rgba(0,0,0,.06);position:relative}
+.review-card{flex-shrink:0;width:100%;padding:48px 56px;background:var(--w);border-radius:var(--r-l);box-shadow:none;border:1px solid rgba(0,0,0,.06);position:relative}
 .review-card__quote{position:absolute;top:24px;right:40px;color:var(--g7)}
 .review-card__text{font-size:1.2rem;line-height:1.7;color:var(--t2);margin-bottom:32px;font-weight:500}
 .review-card__author{display:flex;align-items:center;gap:16px}
