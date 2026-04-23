@@ -19,3 +19,7 @@ jobs:
           password: ${{ secrets.FTP_PASSWORD }}
           local-dir: ./avtopoliv-site/
           server-dir: ./www/xn----7sbbga9auxaj5atn.xn--p1ai/
+
+      - name: Notify IndexNow (Yandex + Bing)
+        run: |
+          curl -s "https://api.indexnow.org/indexnow?url=https%3A%2F%2F%D0%B0%D0%B2%D1%82%D0%BE%D0%BF%D0%BE%D0%BB%D0%B8%D0%B2-%D1%83%D1%84%D0%B0.%D1%80%D1%84%2F&key=a7b3f9d7c06cda36520431a8e8e1c90b&keyLocation=https%3A%2F%2F%D0%B0%D0%B2%D1%82%D0%BE%D0%BF%D0%BE%D0%BB%D0%B8%D0%B2-%D1%83%D1%84%D0%B0.%D1%80%D1%84%2Fa7b3f9d7c06cda36520431a8e8e1c90b.txt" -o /dev/null -w "IndexNow status: %{http_code}\n"
