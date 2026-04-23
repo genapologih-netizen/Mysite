@@ -1,9 +1,12 @@
 User-agent: *
 Allow: /
-Sitemap: https://avtopoliv-ufa.ru/sitemap.xml
+Disallow: /privacy.html
+Sitemap: https://автополив-уфа.рф/sitemap.xml
 
 User-agent: Yandex
 Allow: /
+Disallow: /privacy.html
 
 User-agent: Googlebot
 Allow: /
+Disallow: /privacy.html
