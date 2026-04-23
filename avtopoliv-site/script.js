@@ -384,4 +384,12 @@
         }
     },false);
 
+    var scrollTopBtn=document.getElementById('scroll-top');
+    window.addEventListener('scroll',function(){
+        scrollTopBtn.classList.toggle('visible',window.pageYOffset>400);
+    });
+    scrollTopBtn.addEventListener('click',function(){
+        window.scrollTo({top:0,behavior:'smooth'});
+    });
+
 })();
