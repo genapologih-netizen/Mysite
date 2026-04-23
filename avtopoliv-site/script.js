@@ -62,6 +62,48 @@
         setTimeout(function() { msg.style.display = 'none'; }, 6000);
     }
 
+    function showFieldError(field, msg) {
+        var errId = field.id + '-err';
+        var anchor = field.closest('.form-group') || field.closest('.reviews__form-row') || field;
+        field.classList.remove('field--error');
+        void field.offsetWidth;
+        field.classList.add('field--error');
+        var err = document.getElementById(errId);
+        if (!err) {
+            err = document.createElement('span');
+            err.id = errId;
+            err.className = 'field-error-msg';
+            anchor.insertAdjacentElement('afterend', err);
+        }
+        err.textContent = msg;
+        var evtName = field.tagName === 'SELECT' ? 'change' : 'input';
+        field.addEventListener(evtName, function() {
+            field.classList.remove('field--error');
+            var e = document.getElementById(errId); if (e) e.remove();
+        }, { once: true });
+        field.focus();
+    }
+
+    function showConsentError(label, msg) {
+        var errId = label.htmlFor + '-err';
+        label.classList.remove('form-consent--error');
+        void label.offsetWidth;
+        label.classList.add('form-consent--error');
+        var err = document.getElementById(errId);
+        if (!err) {
+            err = document.createElement('span');
+            err.id = errId;
+            err.className = 'field-error-msg';
+            label.insertAdjacentElement('afterend', err);
+        }
+        err.textContent = msg;
+        var input = document.getElementById(label.htmlFor);
+        input.addEventListener('change', function() {
+            label.classList.remove('form-consent--error');
+            var e = document.getElementById(errId); if (e) e.remove();
+        }, { once: true });
+    }
+
     form.addEventListener('submit', async function(e) {
         e.preventDefault();
 
@@ -73,10 +115,10 @@
         var consent = form.querySelector('#consent-cta').checked;
         var areaVal = form.querySelector('select[name=area]').value;
 
-        if (!nameVal) { form.querySelector('input[name=name]').focus(); return; }
-        if (!phoneVal || phoneVal.length < 6) { form.querySelector('input[name=phone]').focus(); return; }
-        if (!areaVal) { showMessage('Пожалуйста, выберите площадь участка.', 'error'); return; }
-        if (!consent) { showMessage('Пожалуйста, дайте согласие на обработку персональных данных.', 'error'); return; }
+        if (!nameVal) { showFieldError(form.querySelector('input[name=name]'), 'Укажите ваше имя'); return; }
+        if (!phoneVal || phoneVal.length < 6) { showFieldError(form.querySelector('input[name=phone]'), 'Укажите номер телефона'); return; }
+        if (!areaVal) { showFieldError(form.querySelector('select[name=area]'), 'Выберите площадь участка'); return; }
+        if (!consent) { showConsentError(form.querySelector('label[for="consent-cta"]'), 'Необходимо дать согласие на обработку данных'); return; }
 
         var originalText = submitBtn.textContent;
         submitBtn.disabled = true;
@@ -247,6 +289,12 @@
     var thanksModal=document.getElementById('review-thanks');
     reviewForm.addEventListener('submit',function(e){
         e.preventDefault();
+        var nameVal=reviewForm.querySelector('input[name=review_name]').value.trim();
+        var textVal=reviewForm.querySelector('textarea[name=review_text]').value.trim();
+        var consentChecked=reviewForm.querySelector('#consent-review').checked;
+        if(!nameVal){showFieldError(reviewForm.querySelector('input[name=review_name]'),'Укажите ваше имя');return;}
+        if(!textVal){showFieldError(reviewForm.querySelector('textarea[name=review_text]'),'Напишите текст отзыва');return;}
+        if(!consentChecked){showConsentError(reviewForm.querySelector('label[for="consent-review"]'),'Необходимо дать согласие на обработку данных');return;}
         var formData=new FormData(reviewForm);
         var mailBody='Имя: '+formData.get('review_name')+'%0A'+
                      'Город: '+(formData.get('review_city')||'не указан')+'%0A'+
